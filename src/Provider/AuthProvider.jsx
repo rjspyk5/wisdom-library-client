@@ -11,14 +11,13 @@ import {
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
-
-import { useAxiosSecure } from "../Hooks/useAxiosSecure";
+import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 
 export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [loading, setloading] = useState(true);
   const [user, setuser] = useState(null);
-  const axiosSequre = useAxiosSecure();
+  const axiosSequre = useAxiosSequre();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
