@@ -10,8 +10,9 @@ import {
 } from "firebase/auth";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { auth } from "../firebase.config";
+
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
+import { auth } from "../firebase.config";
 
 export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
@@ -25,19 +26,19 @@ export const AuthProvider = ({ children }) => {
       const loggedUser = { email: userEmail };
       setuser(currentUser);
       setloading(false);
-      if (currentUser) {
-        axiosSequre
-          .post(`/jwt`, loggedUser)
-          .then((res) => {
-            console.log(res.data);
-          })
-          .catch((err) => console.log(err));
-      } else {
-        axiosSequre
-          .post(`/logout`, loggedUser)
-          .then((res) => console.log(res.data))
-          .catch((err) => console.log(err));
-      }
+      // if (currentUser) {
+      //   axiosSequre
+      //     .post(`/jwt`, loggedUser)
+      //     .then((res) => {
+      //       console.log(res.data);
+      //     })
+      //     .catch((err) => console.log(err));
+      // } else {
+      //   axiosSequre
+      //     .post(`/logout`, loggedUser)
+      //     .then((res) => console.log(res.data))
+      //     .catch((err) => console.log(err));
+      // }
     });
     return () => {
       return unsubscribe();
@@ -68,15 +69,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const googleProvider = new GoogleAuthProvider();
-  const githubLogin = () => {
-    setloading(true);
-    signInWithPopup(auth, googleProvider);
-  };
-
-  const githubProvider = new GithubAuthProvider();
   const googleLogIn = () => {
     setloading(true);
-    signInWithPopup(auth, githubProvider);
+    signInWithPopup(auth, googleProvider);
   };
 
   const data = {
@@ -86,7 +81,7 @@ export const AuthProvider = ({ children }) => {
     logIn,
     logOut,
     googleLogIn,
-    githubLogin,
+
     updateInfo,
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;

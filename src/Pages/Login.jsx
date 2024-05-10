@@ -1,6 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import { useAuth } from "../Hooks/useAuth";
 import { useEffect } from "react";
 
@@ -8,7 +7,7 @@ export const Login = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const { logIn, googleLogIn, githubLogin, user, loading } = useAuth();
+  const { logIn, googleLogIn, user, loading } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -36,13 +35,6 @@ export const Login = () => {
       .catch((err) => console.log(err));
   };
 
-  const handleGithubLogin = () => {
-    githubLogin()
-      .then(() => {
-        navigate(state ? state : "/");
-      })
-      .catch((err) => console.log(err));
-  };
   if (user && loading) {
     return;
   }
@@ -99,9 +91,6 @@ export const Login = () => {
             <div className="flex justify-center gap-4">
               <button onClick={handleGoogleLogIn}>
                 <FcGoogle size={30} />{" "}
-              </button>
-              <button onClick={handleGithubLogin}>
-                <FaGithub size={30} />
               </button>
             </div>
           </div>
