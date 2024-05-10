@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/useAuth";
+import { useEffect } from "react";
 
 export const Register = () => {
-  const { setuser, user, createUser, updateInfo } = useAuth();
+  const { setuser, loading, user, createUser, updateInfo } = useAuth();
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, []);
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -10,6 +19,11 @@ export const Register = () => {
     const photo = form.get("photo");
     const pass = form.get("pass");
     const email = e.target.email.value;
+    if (!/[A-Z]/.test(pass) || !/[^A-Za-z0-9]/.test(pass) || pass.length < 6) {
+      return alert(
+        "Password must have at least one capital letter,one special char and length at least six character"
+      );
+    }
     createUser(email, pass)
       .then(() => {
         updateInfo(name, photo).then(() =>
@@ -18,6 +32,10 @@ export const Register = () => {
       })
       .catch((er) => console.log(er));
   };
+
+  if (user && loading) {
+    navigate("/");
+  }
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">

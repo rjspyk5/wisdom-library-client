@@ -24,7 +24,7 @@ export const Login = () => {
       .then(() => {
         navigate(state ? state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err.message));
   };
 
   const handleGoogleLogIn = () => {
