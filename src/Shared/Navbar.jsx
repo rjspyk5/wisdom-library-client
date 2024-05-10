@@ -1,7 +1,14 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "./../Hooks/useAuth";
 
 export const Navbar = () => {
+  const { user, logOut } = useAuth();
+
+  const handleLogout = () => {
+    logOut()
+      .then((r) => console.log(r))
+      .catch((er) => console.log(er));
+  };
   const menu = (
     <>
       <li>
@@ -52,7 +59,7 @@ export const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -84,9 +91,26 @@ export const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn">
-            Login
-          </Link>
+          {user ? (
+            <div className="flex items-center gap-2 md:gap-4">
+              <h1>{user?.displayName}</h1>
+              <div className="avatar">
+                <div className="w-8 rounded-full">
+                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="btn text-white font-bold md:btn-md btn-sm bg-red-500"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

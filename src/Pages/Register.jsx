@@ -1,11 +1,28 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../Hooks/useAuth";
 
 export const Register = () => {
+  const { setuser, user, createUser, updateInfo } = useAuth();
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const name = e.target.name.value;
+    const photo = form.get("photo");
+    const pass = form.get("pass");
+    const email = e.target.email.value;
+    createUser(email, pass)
+      .then(() => {
+        updateInfo(name, photo).then(() =>
+          setuser({ ...user, displayName: name, photoURL: photo })
+        );
+      })
+      .catch((er) => console.log(er));
+  };
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form className="w-full max-w-md">
+          <form onSubmit={handleRegister} className="w-full max-w-md">
             <h1 className="text-xl font-bold text-center">Register Now</h1>
             <div className="relative flex items-center mt-8">
               <span className="absolute">
@@ -26,6 +43,7 @@ export const Register = () => {
               </span>
 
               <input
+                name="name"
                 type="text"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
@@ -51,6 +69,7 @@ export const Register = () => {
               </span>
 
               <input
+                name="photo"
                 type="text"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Photo URL"
@@ -76,6 +95,7 @@ export const Register = () => {
               </span>
 
               <input
+                name="email"
                 type="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
@@ -101,6 +121,7 @@ export const Register = () => {
               </span>
 
               <input
+                name="pass"
                 type="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
