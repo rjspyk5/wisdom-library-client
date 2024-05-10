@@ -58,7 +58,7 @@ export const Navbar = () => {
     </>
   );
   return (
-    <div>
+    <div className="fixed backdrop-blur-sm bg-[#251c1c36] w-full z-[50]">
       <div className="navbar bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
