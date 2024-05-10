@@ -95,8 +95,8 @@ export const Navbar = () => {
             <div className="flex items-center gap-2 md:gap-4">
               <h1>{user?.displayName}</h1>
               <div className="avatar">
-                <div className="w-8 rounded-full">
-                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <div className="w-8 md:w-11 rounded-full">
+                  <img src={user.photoURL} />
                 </div>
               </div>
               <button

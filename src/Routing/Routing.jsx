@@ -3,6 +3,7 @@ import { Root } from "../Layout/Root";
 import { ErrorPage } from "../Pages/ErrorPage";
 import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
+import { Home } from "../Pages/Home/Home";
 
 export const Routing = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const Routing = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/login",
         element: <Login />,
