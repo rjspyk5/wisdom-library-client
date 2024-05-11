@@ -6,6 +6,8 @@ import { Register } from "../Pages/Register";
 import { Home } from "../Pages/Home/Home";
 import { AddBook } from "../Pages/AddBook";
 import { PrivateRoute } from "./../Pages/PrivateRoute";
+import { AllBooks } from "../Pages/AllBooks/AllBooks";
+import { Update } from "../Components/Update";
 
 export const Routing = createBrowserRouter([
   {
@@ -32,6 +34,21 @@ export const Routing = createBrowserRouter([
             <AddBook />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/all",
+        element: (
+          <PrivateRoute>
+            <AllBooks />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/books"),
+      },
+      {
+        path: "/update/:id",
+        element: <Update />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/book/${params.id}`),
       },
     ],
   },
