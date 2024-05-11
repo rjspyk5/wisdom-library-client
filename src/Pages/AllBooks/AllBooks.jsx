@@ -9,7 +9,7 @@ export const AllBooks = () => {
     <div>
       <h1>All Books</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.map((el) => (
           <BookCard key={el._id} book={el} />
         ))}

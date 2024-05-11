@@ -1,8 +1,10 @@
 import React from "react";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import { BiStar } from "react-icons/bi";
+import { BiSolidStar } from "react-icons/bi";
 
 export const BookCard = ({ book, button }) => {
-  console.log(book);
   return (
     <div>
       <div className="card card-compact p-5 bg-base-200 shadow-xl">
@@ -11,22 +13,44 @@ export const BookCard = ({ book, button }) => {
         </figure>
 
         <div className="">
-          <p className="text-center font-black text-2xl">{book.bookName}</p>
+          <div className="my-4 flex flex-col">
+            <p className="text-center font-black text-2xl flex-grow">
+              {book.bookName}
+            </p>
+            <p className="text-center opacity-60 ">by {book.authorName}</p>
+          </div>
 
-          <p className="text-center opacity-60">by {book.authorName}</p>
+          <div className="space-y-4">
+            <table className="table">
+              <tr>
+                <td className="font-bold">Catergory :</td>
+                <td>{book.catagory}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Rating :</td>
+                <td>
+                  {" "}
+                  <Rating
+                    initialRating={book.rating}
+                    emptySymbol={<BiStar className="text-yellow-400" />}
+                    fullSymbol={<BiSolidStar className="text-yellow-400" />}
+                    readonly
+                  />
+                </td>
+              </tr>
+            </table>
 
-          <p className="text-center">Catergory : {book.catagory}</p>
-          <p className="text-center">Rating : {book.rating}</p>
+            {!button ? (
+              <Link to={`/update/${book._id}`} className="btn w-full">
+                Update
+              </Link>
+            ) : (
+              <Link to={`/book/${book._id}`} className="btn w-full">
+                View Details
+              </Link>
+            )}
+          </div>
         </div>
-        {!button ? (
-          <Link to={`/update/${book._id}`} className="btn">
-            Update
-          </Link>
-        ) : (
-          <Link to={`/book/${book._id}`} className="btn">
-            View Details
-          </Link>
-        )}
       </div>
     </div>
   );
