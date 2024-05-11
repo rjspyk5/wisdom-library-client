@@ -103,12 +103,16 @@ export const AddBook = () => {
                   <label className="label">
                     <span className="label-text">Catagory</span>
                   </label>
-                  <input
+                  <select
+                    className="p-3 border rounded-md"
                     name="catagory"
-                    type="text"
-                    placeholder="Catagory"
-                    className="input input-bordered"
-                  />
+                    id=""
+                  >
+                    <option value="Novel">Novel</option>
+                    <option value="History">History</option>
+                    <option value="Sci-fi">Sci-fi</option>
+                    <option value="Thriller">Thriller</option>
+                  </select>
                 </div>
 
                 <div className="form-control">

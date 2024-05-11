@@ -59,19 +59,24 @@ export const Update = () => {
                   className="input input-bordered"
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Catagory</span>
                 </label>
                 <select
                   defaultValue={bookPrevInfo.catagory}
-                  className="border"
+                  className="p-3 border rounded-md"
                   name="catagory"
                   id=""
                 >
-                  <option value=""></option>
+                  <option value="Novel">Novel</option>
+                  <option value="History">History</option>
+                  <option value="Sci-fi">Sci-fi</option>
+                  <option value="Thriller">Thriller</option>
                 </select>
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Rating</span>

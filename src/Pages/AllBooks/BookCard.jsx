@@ -1,25 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const BookCard = ({ book }) => {
+export const BookCard = ({ book, button }) => {
+  console.log(book);
   return (
     <div>
-      <div className="card card-compact  bg-base-200 shadow-xl">
+      <div className="card card-compact p-5 bg-base-200 shadow-xl">
         <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
+          <img className="w-full h-60" src={book.photo} alt="Shoes" />
         </figure>
-        <div className="card-body">
-          <p>Book Name: {book.name}</p>
-          <p>Author Name:{book.author}</p>
-          <p>Catagory:{book.catagory}</p>
-          <p>Rating:{book.rating}</p>
+
+        <div className="">
+          <p className="text-center font-black text-2xl">{book.bookName}</p>
+
+          <p className="text-center opacity-60">by {book.authorName}</p>
+
+          <p className="text-center">Catergory : {book.catagory}</p>
+          <p className="text-center">Rating : {book.rating}</p>
         </div>
-        <Link to={`/update/${book._id}`} className="btn m-5">
-          Update
-        </Link>
+        {!button ? (
+          <Link to={`/update/${book._id}`} className="btn">
+            Update
+          </Link>
+        ) : (
+          <Link to={`/book/${book._id}`} className="btn">
+            View Details
+          </Link>
+        )}
       </div>
     </div>
   );

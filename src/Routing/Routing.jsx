@@ -8,6 +8,8 @@ import { AddBook } from "../Pages/AddBook";
 import { PrivateRoute } from "./../Pages/PrivateRoute";
 import { AllBooks } from "../Pages/AllBooks/AllBooks";
 import { Update } from "../Components/Update";
+import { Category } from "../Pages/Home/CatagoriesSection/Category";
+import { BookDetails } from "../Pages/BookDetails";
 
 export const Routing = createBrowserRouter([
   {
@@ -47,6 +49,18 @@ export const Routing = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/book/${params.id}`),
+      },
+      {
+        path: "/category/:category",
+        element: <Category />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.category}`),
+      },
+      {
+        path: "/book/:id",
+        element: <BookDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/book/${params.id}`),
       },
