@@ -36,6 +36,31 @@ export const AddBook = () => {
         <div className="w-1/2 ">
           <div className="card  shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit} className="card-body">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Book Name</span>
+                  </label>
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Book Name"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Author Name</span>
+                  </label>
+                  <input
+                    name="author"
+                    type="text"
+                    placeholder="Author Name"
+                    className="input input-bordered"
+                  />
+                </div>
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Image</span>
@@ -49,74 +74,57 @@ export const AddBook = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Book Name</span>
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Book Name"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Quantity</span>
-                </label>
-                <input
-                  name="quantity"
-                  type="number"
-                  placeholder="Quantity of the book"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Author Name</span>
-                </label>
-                <input
-                  name="author"
-                  type="text"
-                  placeholder="Author Name"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Catagory</span>
-                </label>
-                <input
-                  name="catagory"
-                  type="text"
-                  placeholder="Catagory"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
                   <span className="label-text">Short Description</span>
                 </label>
-
-                <input
-                  name="description"
-                  type="text"
+                <textarea
+                  className="border p-4 rounded-md"
                   placeholder="Short Description"
-                  className="input input-bordered"
-                />
+                  name="description"
+                  id=""
+                  rows="3"
+                ></textarea>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Rating</span>
-                </label>
-                <select className="p-2 border rounded-md" name="rating" id="">
-                  <option value="5">5</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1</option>
-                </select>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Quantity</span>
+                  </label>
+                  <input
+                    name="quantity"
+                    type="number"
+                    placeholder="Quantity of the book"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Catagory</span>
+                  </label>
+                  <input
+                    name="catagory"
+                    type="text"
+                    placeholder="Catagory"
+                    className="input input-bordered"
+                  />
+                </div>
+
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Rating</span>
+                  </label>
+                  <select className="p-3 border rounded-md" name="rating" id="">
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>
+                </div>
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">About the Book</span>
