@@ -9,7 +9,8 @@ export const AddBook = () => {
     const form = new FormData(e.target);
     const bookName = form.get("name");
     const photo = form.get("photo");
-    const quantity = form.get("quantity");
+    const quantit = form.get("quantity");
+    const quantity = parseInt(quantit);
     const authorName = form.get("author");
     const catagory = form.get("catagory");
     const description = form.get("description");
