@@ -10,6 +10,7 @@ import { AllBooks } from "../Pages/AllBooks/AllBooks";
 import { Update } from "../Components/Update";
 import { Category } from "../Pages/Home/CatagoriesSection/Category";
 import { BookDetails } from "../Pages/BookDetails";
+import { BorrowedBooks } from "../Pages/BorrowedBooks";
 
 export const Routing = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ export const Routing = createBrowserRouter([
         element: <BookDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/book/${params.id}`),
+      },
+      {
+        path: "/borrowed",
+        element: <BorrowedBooks />,
       },
     ],
   },
