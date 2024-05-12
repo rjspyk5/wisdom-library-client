@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Rating from "react-rating";
+import moment from "moment";
 
 import { BiStar } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
@@ -22,9 +23,22 @@ export const BookDetails = () => {
     const userName = user.displayName;
     const email = user.email;
     const bookId = book._id;
+    const photo = book.photo;
+    const category = book.catagory;
+    const bookName = book.bookName;
     const returnDate = e.target.returnn.value;
+    const borrowDate = moment().format("YYYY-MM-DD");
     axiosSequre
-      .post(`/borrow/${bookId}`, { userName, email, bookId, returnDate })
+      .post(`/borrow/${bookId}`, {
+        userName,
+        email,
+        bookId,
+        returnDate,
+        photo,
+        bookName,
+        borrowDate,
+        category,
+      })
       .then((res) => {
         fetchData();
         console.log(res.data);
