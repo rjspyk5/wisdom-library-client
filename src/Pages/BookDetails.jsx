@@ -1,5 +1,5 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating";
 
 import { BiStar } from "react-icons/bi";
@@ -8,9 +8,15 @@ import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 
 export const BookDetails = () => {
-  const book = useLoaderData();
+  // const book = useLoaderData();
+
+  const [book, setbook] = useState({});
+  const { id } = useParams();
   const axiosSequre = useAxiosSequre();
   const { user } = useAuth();
+  const fetchData = () =>
+    axiosSequre.get(`/book/${id}`).then((res) => setbook(res.data));
+
   const handleBorrow = (e) => {
     e.preventDefault();
     const userName = user.displayName;
@@ -19,9 +25,16 @@ export const BookDetails = () => {
     const returnDate = e.target.returnn.value;
     axiosSequre
       .post(`/borrow/${bookId}`, { userName, email, bookId, returnDate })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        fetchData();
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
