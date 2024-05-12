@@ -5,9 +5,11 @@ import Rating from "react-rating";
 import { BiStar } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
 import { useAuth } from "../Hooks/useAuth";
+import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 
 export const BookDetails = () => {
   const book = useLoaderData();
+  const axiosSequre = useAxiosSequre();
   const { user } = useAuth();
   const handleBorrow = (e) => {
     e.preventDefault();
@@ -15,6 +17,10 @@ export const BookDetails = () => {
     const email = user.email;
     const bookId = book._id;
     const returnDate = e.target.returnn.value;
+    axiosSequre
+      .post(`/borrow/${bookId}`, { userName, email, bookId, returnDate })
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -84,7 +90,6 @@ export const BookDetails = () => {
             <h1 className="font-bold text-3xl mb-5">{book.bookName}</h1>
             <p className="opacity-60 mb-5">by {book.authorName}</p>
           </div>
-
           <table className="table w-2/3 text-lg">
             <tr>
               <td className="font-bold">Rating </td>
