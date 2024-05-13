@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Rating from "react-rating";
 import moment from "moment";
+import Swal from "sweetalert2";
 
 import { BiStar } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
@@ -9,7 +10,18 @@ import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 
 export const BookDetails = () => {
-  // const book = useLoaderData();
+  const sweetAlert = (msx) => {
+    Swal.fire({
+      icon: "success",
+      title: msx,
+    });
+  };
+  const errorAlert = (msz) =>
+    Swal.fire({
+      icon: "error",
+
+      title: msz,
+    });
   const [book, setbook] = useState({});
   const { id } = useParams();
   const axiosSequre = useAxiosSequre();
@@ -39,7 +51,17 @@ export const BookDetails = () => {
       })
       .then((res) => {
         fetchData();
-        alert("sucessfully borrowed");
+        if (res.data === "duplicate request") {
+          return errorAlert(
+            "You already borrowd this book.Duplicate borrw don't allowed"
+          );
+        }
+        if (res.data === "limit end") {
+          return errorAlert(
+            "Limit Exceeded,each person is allowed to borrow up to three books"
+          );
+        }
+
         console.log(res.data);
       })
       .catch((err) => console.log(err));
