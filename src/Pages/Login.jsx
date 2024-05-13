@@ -2,13 +2,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useAuth } from "../Hooks/useAuth";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const Login = () => {
   const { state } = useLocation();
+
   const navigate = useNavigate();
 
   const { logIn, googleLogIn, user, loading } = useAuth();
-
+  const sweetAlert = (msx) => {
+    Swal.fire({
+      icon: "success",
+      title: msx,
+    });
+  };
   useEffect(() => {
     if (user) {
       navigate("/");
@@ -22,6 +29,7 @@ export const Login = () => {
     const password = e.target.pass.value;
     logIn(email, password)
       .then(() => {
+        sweetAlert("Login successfull");
         navigate(state ? state : "/");
       })
       .catch((err) => alert(err.message));
@@ -29,7 +37,9 @@ export const Login = () => {
 
   const handleGoogleLogIn = () => {
     googleLogIn()
-      .then((r) => {
+      ?.then(() => {
+        console.log("test");
+        sweetAlert("Login successfull");
         navigate(state ? state : "/");
       })
       .catch((err) => console.log(err));

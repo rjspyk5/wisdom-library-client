@@ -1,10 +1,27 @@
 import React from "react";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { useAuth } from "../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const AddBook = () => {
   const axiosSequre = useAxiosSequre();
   const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const sweetAlert = (msx) => {
+    Swal.fire({
+      icon: "success",
+      title: msx,
+    });
+  };
+
+  const errorAlert = (msz) =>
+    Swal.fire({
+      icon: "error",
+
+      title: msz,
+    });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +30,11 @@ export const AddBook = () => {
     const photo = form.get("photo");
     const quantit = form.get("quantity");
     const quantity = parseInt(quantit);
+    if (quantity < 1) {
+      return errorAlert(
+        "Please enter a positive integer greater than or equal to 1"
+      );
+    }
     const authorName = form.get("author");
     const catagory = form.get("catagory");
     const description = form.get("description");
@@ -30,7 +52,10 @@ export const AddBook = () => {
     };
     axiosSequre
       .post(`/books?email=${user.email}`, bookInfo)
-      .then((res) => console.log(res.data))
+      .then(() => {
+        sweetAlert("Product added successfully");
+        navigate("/all");
+      })
       .catch((err) => console.log(err));
   };
   return (
@@ -144,7 +169,9 @@ export const AddBook = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Add the book</button>
+                <button type="submit" className="btn btn-primary">
+                  Add the book
+                </button>
               </div>
             </form>
           </div>

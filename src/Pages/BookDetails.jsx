@@ -10,14 +10,12 @@ import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 
 export const BookDetails = () => {
   // const book = useLoaderData();
-
   const [book, setbook] = useState({});
   const { id } = useParams();
   const axiosSequre = useAxiosSequre();
   const { user } = useAuth();
   const fetchData = () =>
     axiosSequre.get(`/book/${id}`).then((res) => setbook(res.data));
-
   const handleBorrow = (e) => {
     e.preventDefault();
     const userName = user?.displayName;
