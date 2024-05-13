@@ -31,9 +31,7 @@ export const AddBook = () => {
     const quantit = form.get("quantity");
     const quantity = parseInt(quantit);
     if (quantity < 1) {
-      return errorAlert(
-        "Please enter a positive integer greater than or equal to 1"
-      );
+      return errorAlert("Quantity can't be negative or zero");
     }
     const authorName = form.get("author");
     const catagory = form.get("catagory");
@@ -53,7 +51,7 @@ export const AddBook = () => {
     axiosSequre
       .post(`/books?email=${user.email}`, bookInfo)
       .then(() => {
-        sweetAlert("Product added successfully");
+        sweetAlert("Books added successfully");
         navigate("/all");
       })
       .catch((err) => console.log(err));

@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "./../Hooks/useAuth";
+import logo from "../assets/image/icons/logo.png";
 
 export const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -91,7 +92,10 @@ export const Navbar = () => {
               {menu}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link to="/" className="btn btn-ghost text-xl">
+            <img className="w-10" src={logo} alt="" />
+            WisdomLibrary
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menu}</ul>
