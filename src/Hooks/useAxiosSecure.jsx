@@ -8,8 +8,6 @@ const axiosSecure = axios.create({
 });
 
 export const useAxiosSequre = () => {
-  const { logOut } = useAuth();
-
   axiosSecure.interceptors.response.use(
     (res) => {
       return res;
