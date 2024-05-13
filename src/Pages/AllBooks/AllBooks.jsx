@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { BookCard } from "./BookCard";
 import { useAxiosSequre } from "../../Hooks/useAxiosSecure";
 import { useAuth } from "../../Hooks/useAuth";
@@ -7,6 +6,7 @@ import { useAuth } from "../../Hooks/useAuth";
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
   const { user } = useAuth();
+
   const axiosSequre = useAxiosSequre();
   useEffect(() => {
     fetchData();

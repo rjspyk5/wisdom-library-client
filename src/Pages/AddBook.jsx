@@ -1,8 +1,10 @@
 import React from "react";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
+import { useAuth } from "../Hooks/useAuth";
 
 export const AddBook = () => {
   const axiosSequre = useAxiosSequre();
+  const { user } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export const AddBook = () => {
       about,
     };
     axiosSequre
-      .post("/books", bookInfo)
+      .post(`/books?email=${user.email}`, bookInfo)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   };

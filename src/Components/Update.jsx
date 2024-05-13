@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
+import { useAuth } from "../Hooks/useAuth";
 
 export const Update = () => {
   const bookPrevInfo = useLoaderData();
+  const { user } = useAuth();
   const axiosSequre = useAxiosSequre();
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -12,8 +14,9 @@ export const Update = () => {
     const catagory = e.target.catagory.value;
     const rating = e.target.rating.value;
     const data = { photo, name, author, catagory, rating };
+
     axiosSequre
-      .patch(`/book/${bookPrevInfo._id}`, data)
+      .patch(`/book/${bookPrevInfo._id}?email=${user.email}`, data)
       .then((res) => console.log(res.data))
       .catch((er) => console.log(er));
   };
