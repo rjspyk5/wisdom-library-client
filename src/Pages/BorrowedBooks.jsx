@@ -7,6 +7,7 @@ import { BorrowBookCard } from "../Components/BorrowBookCard";
 export const BorrowedBooks = () => {
   const axiosSequre = useAxiosSequre();
   const [borrowedBooks, setborrowedBooks] = useState([]);
+  const [loading, setloading] = useState(true);
   const { user } = useAuth();
 
   const handleReturnBook = (borrowBookId, bookId) => {
@@ -28,9 +29,11 @@ export const BorrowedBooks = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
+          setloading(true);
           axiosSequre
             .delete(`/borrow/${borrowBookId}?book=${bookId}`)
             .then(() => {
+              setloading(false);
               swalWithBootstrapButtons.fire({
                 title: "Successfully Return ",
                 icon: "success",
@@ -40,8 +43,10 @@ export const BorrowedBooks = () => {
       });
   };
   useEffect(() => {
+    setloading(true);
     axiosSequre.get(`/borrow?email=${user?.email}`).then((res) => {
       setborrowedBooks(res.data);
+      setloading(false);
     });
   }, [handleReturnBook]);
 

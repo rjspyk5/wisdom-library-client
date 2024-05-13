@@ -7,7 +7,13 @@ export const PrivateRoute = ({ children }) => {
   const { pathname } = useLocation();
 
   if (loading) {
-    return "Loading........";
+    return (
+      <div className="min-h-[500px] flex justify-center items-center">
+        <div>
+          <span className="loading loading-bars loading-lg"></span>
+        </div>
+      </div>
+    );
   }
   if (user) {
     return children;
