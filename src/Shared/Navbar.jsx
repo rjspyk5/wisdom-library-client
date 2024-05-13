@@ -1,15 +1,28 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "./../Hooks/useAuth";
 import logo from "../assets/image/icons/logo.png";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [darkMode, setdarkMode] = useState(
+    localStorage.getItem("darkMode")
+      ? localStorage.getItem("darkMode")
+      : "light"
+  );
 
   const handleLogout = () => {
     logOut()
       .then((r) => console.log(r))
       .catch((er) => console.log(er));
   };
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", localStorage.getItem("darkMode"));
+  }, [darkMode]);
   const menu = (
     <>
       <li>
@@ -121,6 +134,14 @@ export const Navbar = () => {
               Login
             </Link>
           )}
+          <input
+            onChange={(e) => {
+              e.target.checked ? setdarkMode("dark") : setdarkMode("light");
+            }}
+            type="checkbox"
+            checked={darkMode === "light" ? false : true}
+            className="toggle theme-controller"
+          />
         </div>
       </div>
     </div>
