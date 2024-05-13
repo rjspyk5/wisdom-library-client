@@ -23,6 +23,12 @@ export const AllBooks = () => {
   };
   return (
     <div>
+      <div>
+        <select className="select select-bordered w-full max-w-xs">
+          <option>All Books</option>
+          <option>Available Books</option>
+        </select>
+      </div>
       {loading ? (
         <div className="min-h-[500px] flex justify-center items-center">
           <div>
