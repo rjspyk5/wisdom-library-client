@@ -41,6 +41,7 @@ export const BookDetails = () => {
       })
       .then((res) => {
         fetchData();
+        alert("sucessfully borrowed");
         console.log(res.data);
       })
       .catch((err) => console.log(err));

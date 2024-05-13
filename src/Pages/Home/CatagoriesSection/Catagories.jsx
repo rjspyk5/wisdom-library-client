@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CatagoriesCard } from "./CatagoriesCard";
 import { useAxiosSequre } from "../../../Hooks/useAxiosSecure";
-import axios from "axios";
 
 export const Catagories = () => {
   const [catagoryName, setcatagoryName] = useState([]);

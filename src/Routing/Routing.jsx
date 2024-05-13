@@ -45,7 +45,6 @@ export const Routing = createBrowserRouter([
             <AllBooks />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/books"),
       },
       {
         path: "/update/:id",
@@ -70,8 +69,6 @@ export const Routing = createBrowserRouter([
             <BookDetails />
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/book/${params.id}`),
       },
       {
         path: "/borrowed",

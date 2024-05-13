@@ -22,22 +22,24 @@ export const BookCard = ({ book, button }) => {
 
           <div className="space-y-4">
             <table className="table">
-              <tr>
-                <td className="font-bold">Catergory :</td>
-                <td>{book.catagory}</td>
-              </tr>
-              <tr>
-                <td className="font-bold">Rating :</td>
-                <td>
-                  {" "}
-                  <Rating
-                    initialRating={book.rating}
-                    emptySymbol={<BiStar className="text-yellow-400" />}
-                    fullSymbol={<BiSolidStar className="text-yellow-400" />}
-                    readonly
-                  />
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="font-bold">Catergory :</td>
+                  <td>{book.catagory}</td>
+                </tr>
+                <tr>
+                  <td className="font-bold">Rating :</td>
+                  <td>
+                    {" "}
+                    <Rating
+                      initialRating={book.rating}
+                      emptySymbol={<BiStar className="text-yellow-400" />}
+                      fullSymbol={<BiSolidStar className="text-yellow-400" />}
+                      readonly
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
 
             {!button ? (

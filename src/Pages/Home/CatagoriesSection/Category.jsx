@@ -5,7 +5,6 @@ import { BookCard } from "../../AllBooks/BookCard";
 export const Category = () => {
   const { category } = useParams();
   const books = useLoaderData();
-  console.log(books);
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { useAuth } from "./useAuth";
-import { Navigate } from "react-router-dom";
+import { auth } from "../firebase.config";
+import { signOut } from "firebase/auth";
 
 const axiosSecure = axios.create({
   baseURL: "http://localhost:5000",
@@ -9,13 +9,23 @@ const axiosSecure = axios.create({
 });
 
 export const useAxiosSequre = () => {
+  // const navigate = useNavigate();
+  // const { logOut } = useContext(AuthProvider);
+
+  const logOut = () => {
+    return signOut(auth);
+  };
+
   axiosSecure.interceptors.response.use(
     (res) => {
       return res;
     },
     (error) => {
       if (error.response.status === 401 || error.response.status === 403) {
-        logout().then(() => <Navigate to="/login" />);
+        console.log(error);
+        logOut().then(() => {
+          window.location.href = "/login";
+        });
         return Promise.reject(error);
       }
     }
