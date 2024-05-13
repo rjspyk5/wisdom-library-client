@@ -10,24 +10,28 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
 
   return (
     <div>
-      <div className="card card-compact  bg-base-100 shadow-xl">
+      <div className="card px-1 py-4 card-compact  bg-base-100 shadow-xl">
         <figure>
-          <img className="w-48 h-60" src={info.photo} alt="Shoes" />
+          <img
+            className="w-3/5 h-72 md:h-56 rounded-lg"
+            src={info.photo}
+            alt="book"
+          />
         </figure>
         <div className="card-body">
           <h2 className="font-bold text-2xl text-center">{info.bookName}</h2>
 
           <table className="table">
             <tbody>
-              <tr>
+              <tr className="*:py-1">
                 <td className="font-bold">Catergory :</td>
                 <td>{info.category}</td>
               </tr>
-              <tr>
+              <tr className="*:py-1">
                 <td className="font-bold">Borrow Date :</td>
                 <td>{formatedBorrwDate}</td>
               </tr>
-              <tr>
+              <tr className="*:py-1">
                 <td className="font-bold">Return Date :</td>
                 <td>{formatedReturnDate}</td>
               </tr>
@@ -35,7 +39,7 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
           </table>
           <button
             onClick={() => handleReturnBook(info._id, info.bookId)}
-            className="btn bg-[#ec3c9d] text-white"
+            className="btn bg-[#278270] text-white"
           >
             Return Now
           </button>

@@ -14,7 +14,7 @@ export const Category = () => {
         subheading={`Explore a diverse range of ${category} books, from timeless classics to contemporary bestsellers.`}
       />
 
-      <div className="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="gap-4 md:gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {books?.map((el) => (
           <StylishCard key={el._id} book={el} button={true} />
         ))}
