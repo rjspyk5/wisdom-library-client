@@ -3,6 +3,7 @@ import { Carasoul } from "./Carasoul";
 import "animate.css";
 import { HeadingSection } from "./../../Components/HeadingSection";
 import { Catagories } from "./CatagoriesSection/Catagories";
+import { ContactUs } from "../../Components/ContactUs";
 
 export const Home = () => {
   return (
@@ -18,6 +19,9 @@ export const Home = () => {
       </div>
       <div>
         <Catagories />
+      </div>
+      <div>
+        <ContactUs />
       </div>
     </>
   );
