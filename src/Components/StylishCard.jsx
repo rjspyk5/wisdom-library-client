@@ -40,7 +40,10 @@ export const StylishCard = ({ book, button }) => {
           </table>
           <div className="w-11/12 mx-auto">
             {!button ? (
-              <Link to={`/update/${book?._id}`} className="btn w-full">
+              <Link
+                to={`/update/${book?._id}`}
+                className="btn bg-[#FF9800] text-white w-full"
+              >
                 Update
               </Link>
             ) : (

@@ -167,7 +167,7 @@ export const AddBook = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn bg-[#4CAF50] text-white">
                   Add the book
                 </button>
               </div>
