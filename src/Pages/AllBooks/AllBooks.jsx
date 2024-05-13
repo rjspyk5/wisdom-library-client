@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { BookCard } from "./BookCard";
+
 import { useAxiosSequre } from "../../Hooks/useAxiosSecure";
 import { useAuth } from "../../Hooks/useAuth";
+import { StylishCard } from "../../Components/StylishCard";
 
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
@@ -54,7 +55,7 @@ export const AllBooks = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {data.map((el) => (
-            <BookCard key={el._id} book={el} />
+            <StylishCard key={el._id} book={el} />
           ))}
         </div>
       )}
