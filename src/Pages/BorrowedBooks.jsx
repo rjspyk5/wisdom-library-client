@@ -46,21 +46,29 @@ export const BorrowedBooks = () => {
     setloading(true);
     axiosSequre.get(`/borrow?email=${user?.email}`).then((res) => {
       setborrowedBooks(res.data);
-      setloading(false);
     });
+    setloading(false);
   }, [handleReturnBook]);
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {borrowedBooks.map((el) => (
-          <BorrowBookCard
-            handleReturnBook={handleReturnBook}
-            key={el._id}
-            info={el}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <div className="min-h-[500px] flex justify-center items-center">
+          <div>
+            <span className="loading loading-bars loading-lg"></span>
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+          {borrowedBooks.map((el) => (
+            <BorrowBookCard
+              handleReturnBook={handleReturnBook}
+              key={el._id}
+              info={el}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
