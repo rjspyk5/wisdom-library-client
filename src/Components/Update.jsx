@@ -1,11 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { useAuth } from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 export const Update = () => {
   const bookPrevInfo = useLoaderData();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const axiosSequre = useAxiosSequre();
+  const sweetAlert = (msx) => {
+    Swal.fire({
+      icon: "success",
+      title: msx,
+    });
+  };
   const handleUpdate = (e) => {
     e.preventDefault();
     const photo = e.target.photo.value;
@@ -17,7 +25,10 @@ export const Update = () => {
 
     axiosSequre
       .patch(`/book/${bookPrevInfo._id}?email=${user.email}`, data)
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        sweetAlert("Successfully updated");
+        navigate("/all");
+      })
       .catch((er) => console.log(er));
   };
   return (
