@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Swal from "sweetalert2";
 import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { BorrowBookCard } from "../Components/BorrowBookCard";
@@ -10,12 +10,39 @@ export const BorrowedBooks = () => {
   const { user } = useAuth();
 
   const handleReturnBook = (borrowBookId, bookId) => {
-    axiosSequre.delete(`/borrow/${borrowBookId}?book=${bookId}`);
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        text: "Are you sure you want to return now?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Return Now",
+        cancelButtonText: "Cancel",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          axiosSequre
+            .delete(`/borrow/${borrowBookId}?book=${bookId}`)
+            .then(() => {
+              swalWithBootstrapButtons.fire({
+                title: "Successfully Return ",
+                icon: "success",
+              });
+            });
+        }
+      });
   };
   useEffect(() => {
-    axiosSequre
-      .get(`/borrow?email=${user?.email}`)
-      .then((res) => setborrowedBooks(res.data));
+    axiosSequre.get(`/borrow?email=${user?.email}`).then((res) => {
+      setborrowedBooks(res.data);
+    });
   }, [handleReturnBook]);
 
   return (

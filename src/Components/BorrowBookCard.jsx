@@ -7,6 +7,7 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
   const formatedReturnDate = moment(info.returnDate).format(
     "dddd, MMMM Do YYYY"
   );
+
   return (
     <div>
       <div className="card card-compact  bg-base-100 shadow-xl">
