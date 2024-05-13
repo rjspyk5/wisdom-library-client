@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { Navigate } from "react-router-dom";
+import { useAuth } from "./useAuth";
 
 const axiosSecure = axios.create({
   baseURL: "http://localhost:5000",
@@ -8,6 +8,8 @@ const axiosSecure = axios.create({
 });
 
 export const useAxiosSequre = () => {
+  const { logOut } = useAuth();
+
   axiosSecure.interceptors.response.use(
     (res) => {
       return res;

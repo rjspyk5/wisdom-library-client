@@ -14,7 +14,7 @@ export const BorrowedBooks = () => {
   };
   useEffect(() => {
     axiosSequre
-      .get(`/borrow?email=${user.email}`)
+      .get(`/borrow?email=${user?.email}`)
       .then((res) => setborrowedBooks(res.data));
   }, [handleReturnBook]);
 

@@ -20,8 +20,8 @@ export const BookDetails = () => {
 
   const handleBorrow = (e) => {
     e.preventDefault();
-    const userName = user.displayName;
-    const email = user.email;
+    const userName = user?.displayName;
+    const email = user?.email;
     const bookId = book._id;
     const photo = book.photo;
     const category = book.catagory;
@@ -63,7 +63,7 @@ export const BookDetails = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  value={user.email}
+                  value={user?.email}
                   disabled
                   type="email"
                   placeholder="email"
@@ -76,7 +76,7 @@ export const BookDetails = () => {
                 </label>
                 <input
                   disabled
-                  value={user.displayName}
+                  value={user?.displayName}
                   type="text"
                   className="input input-bordered"
                 />
@@ -98,12 +98,12 @@ export const BookDetails = () => {
               <button className="w-full btn" type="submit">
                 Submit
               </button>
-              <form method="dialog" className="">
-                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                  ✕
-                </button>
-              </form>
             </div>
+          </form>
+          <form method="dialog" className="">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
           </form>
         </div>
       </dialog>
@@ -118,38 +118,36 @@ export const BookDetails = () => {
             <p className="opacity-60 mb-5">by {book.authorName}</p>
           </div>
           <table className="table w-2/3 text-lg">
-            <tr>
-              <td className="font-bold">Rating </td>
-              <td>
-                {" "}
-                <Rating
-                  initialRating={book.rating}
-                  emptySymbol={<BiStar className="text-yellow-400" />}
-                  fullSymbol={<BiSolidStar className="text-yellow-400" />}
-                  readonly
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="font-bold">Catergory </td>
-              <td>{book.catagory}</td>
-            </tr>
-            <tr>
-              <td className="font-bold">Available Quantity </td>
-              <td>{book.quantity}</td>
-            </tr>
-            <tr>
-              <td className="font-bold">About this book </td>
-              <td>{book.about}</td>
-            </tr>
-            <tr>
-              <td className="font-bold">Description </td>
-              <td>{book.description}</td>
-            </tr>
-            <div className="ml-4">
-              <p className="font-bold text-lg">Description </p>
-              <p>{book.description}</p>
-            </div>
+            <tbody>
+              <tr>
+                <td className="font-bold">Rating </td>
+                <td>
+                  {" "}
+                  <Rating
+                    initialRating={book.rating}
+                    emptySymbol={<BiStar className="text-yellow-400" />}
+                    fullSymbol={<BiSolidStar className="text-yellow-400" />}
+                    readonly
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="font-bold">Catergory </td>
+                <td>{book.catagory}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Available Quantity </td>
+                <td>{book.quantity}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">About this book </td>
+                <td>{book.about}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Description </td>
+                <td>{book.description}</td>
+              </tr>
+            </tbody>
           </table>
           <button
             onClick={() => document.getElementById("my_modal_1").showModal()}

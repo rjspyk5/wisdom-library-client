@@ -3,7 +3,7 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
   const formatedBorrwDate = moment(info.borrowDate).format(
     "dddd, MMMM Do YYYY"
   );
-  console.log(formatedBorrwDate);
+
   const formatedReturnDate = moment(info.returnDate).format(
     "dddd, MMMM Do YYYY"
   );
@@ -17,18 +17,20 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
           <h2 className="font-bold text-2xl text-center">{info.bookName}</h2>
 
           <table className="table">
-            <tr>
-              <td className="font-bold">Catergory :</td>
-              <td>{info.category}</td>
-            </tr>
-            <tr>
-              <td className="font-bold">Borrow Date :</td>
-              <td>{formatedBorrwDate}</td>
-            </tr>
-            <tr>
-              <td className="font-bold">Return Date :</td>
-              <td>{formatedReturnDate}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className="font-bold">Catergory :</td>
+                <td>{info.category}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Borrow Date :</td>
+                <td>{formatedBorrwDate}</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Return Date :</td>
+                <td>{formatedReturnDate}</td>
+              </tr>
+            </tbody>
           </table>
           <button
             onClick={() => handleReturnBook(info._id, info.bookId)}

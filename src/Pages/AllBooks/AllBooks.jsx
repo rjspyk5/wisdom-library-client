@@ -4,7 +4,7 @@ import { BookCard } from "./BookCard";
 
 export const AllBooks = () => {
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <div>
       <h1>All Books</h1>

@@ -22,39 +22,45 @@ export const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/add"
-          className={({ isActive }) =>
-            isActive ? "bg-blue-600 focus:bg-blue-600" : ""
-          }
-        >
-          {" "}
-          Add Book
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/all"
-          className={({ isActive }) =>
-            isActive ? "bg-blue-600 focus:bg-blue-600" : ""
-          }
-        >
-          {" "}
-          All Books
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/borrowed"
-          className={({ isActive }) =>
-            isActive ? "bg-blue-600 focus:bg-blue-600" : ""
-          }
-        >
-          {" "}
-          Borrowed Books
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/add"
+            className={({ isActive }) =>
+              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+            }
+          >
+            {" "}
+            Add Book
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            to="/all"
+            className={({ isActive }) =>
+              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+            }
+          >
+            {" "}
+            All Books
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            to="/borrowed"
+            className={({ isActive }) =>
+              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+            }
+          >
+            {" "}
+            Borrowed Books
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
