@@ -26,19 +26,19 @@ export const AuthProvider = ({ children }) => {
       const loggedUser = { email: userEmail };
       setuser(currentUser);
       setloading(false);
-      // if (currentUser) {
-      //   axiosSequre
-      //     .post(`/jwt`, loggedUser)
-      //     .then((res) => {
-      //       console.log(res.data);
-      //     })
-      //     .catch((err) => console.log(err));
-      // } else {
-      //   axiosSequre
-      //     .post(`/logout`, loggedUser)
-      //     .then((res) => console.log(res.data))
-      //     .catch((err) => console.log(err));
-      // }
+      if (currentUser) {
+        axiosSequre
+          .post(`/jwt`, loggedUser)
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => console.log(err));
+      } else {
+        axiosSequre
+          .post(`/logout`, loggedUser)
+          .then((res) => console.log(res.data))
+          .catch((err) => console.log(err));
+      }
     });
     return () => {
       return unsubscribe();
