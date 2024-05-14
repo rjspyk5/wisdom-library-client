@@ -1,13 +1,10 @@
 import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
-import { BiStar } from "react-icons/bi";
-import { BiSolidStar } from "react-icons/bi";
 export const StylishCard = ({ book, button }) => {
   return (
     <div>
-      <div className="px-1 py-4 bg-base-100 shadow-xl rounded-xl card card-compact ">
+      <div className="px-1 py-4 bg-base-200  rounded-xl card card-compact ">
         <figure>
           <img
             className="md:w-3/5 w-4/5 h-52 md:h-60 rounded-md"
@@ -34,7 +31,7 @@ export const StylishCard = ({ book, button }) => {
                 <td className="font-bold">Rating</td>
                 <td>
                   <Rating
-                    style={{ maxWidth: 180 }}
+                    style={{ maxWidth: 70 }}
                     value={book?.rating}
                     readOnly
                   />
@@ -58,8 +55,8 @@ export const StylishCard = ({ book, button }) => {
           </div>
         </div>
       </div>
-      <div className="w-11/12 h-2 mx-auto bg-base-100  rounded-b-2xl opacity-75" />
-      <div className="w-10/12 h-2 mx-auto bg-base-100  rounded-b-2xl opacity-50" />
+      <div className="w-11/12 h-2 mx-auto bg-base-200  rounded-b-2xl opacity-75" />
+      <div className="w-10/12 h-2 mx-auto bg-base-200  rounded-b-2xl opacity-50" />
     </div>
   );
 };
