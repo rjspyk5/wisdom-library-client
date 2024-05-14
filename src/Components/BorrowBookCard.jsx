@@ -10,10 +10,10 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
 
   return (
     <div>
-      <div className="card px-1 py-4 card-compact  bg-base-100 shadow-xl">
+      <div className="card  px-1 py-4 card-compact  bg-base-200 shadow-xl">
         <figure>
           <img
-            className="w-3/5 h-72 md:h-56 rounded-lg"
+            className="w-3/5 h-56 md:h-60 rounded-lg"
             src={info.photo}
             alt="book"
           />

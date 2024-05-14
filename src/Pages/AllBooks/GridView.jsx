@@ -24,13 +24,12 @@ export const GridView = ({ book }) => {
           </span>
         </td>
         <td>
-          {" "}
           <Rating style={{ maxWidth: 50 }} value={book?.rating} readOnly />
         </td>
         <th>
           <Link
             to={`/update/${book?._id}`}
-            className="btn btn-xs md:btn-sm lg:btn-md px-1 md:px-2 bg-[#FF9800] text-white"
+            className="btn btn-xs md:btn-sm md:w-full lg:btn-md px-1 md:px-2 bg-[#FF9800] text-white"
           >
             Update
           </Link>

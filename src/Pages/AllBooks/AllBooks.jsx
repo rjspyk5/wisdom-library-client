@@ -5,6 +5,7 @@ import { useAuth } from "../../Hooks/useAuth";
 import { StylishCard } from "../../Components/StylishCard";
 import { GridView } from "./GridView";
 import { PiListBulletsFill } from "react-icons/pi";
+import { HeadingSection } from "../../Components/HeadingSection";
 
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
@@ -73,7 +74,11 @@ export const AllBooks = () => {
   );
   return (
     <div className="px-8 max-w-[1150px] mx-auto">
-      <div className="flex my-10 justify-between">
+      <HeadingSection
+        heading="All books"
+        subheading="Explore our shelves for your next great read. With genres to suit every taste, finding your next favorite book is just a click away!"
+      />
+      <div className="flex my-10 mx-4 justify-between">
         <select
           onChange={(e) => setfilter(e.target.value)}
           className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-32 md:w-40"
