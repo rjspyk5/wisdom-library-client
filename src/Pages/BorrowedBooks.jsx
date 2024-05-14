@@ -29,26 +29,38 @@ export const BorrowedBooks = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          setloading(true);
           axiosSequre
             .delete(`/borrow/${borrowBookId}?book=${bookId}`)
             .then(() => {
-              setloading(false);
+              setloading(true);
+              axiosSequre
+                .get(`/borrow?email=${user?.email}`)
+                .then((res) => {
+                  setloading(false);
+                  setborrowedBooks(res.data);
+                })
+                .catch(() => setloading(false));
+
               swalWithBootstrapButtons.fire({
                 title: "Successfully Return ",
                 icon: "success",
               });
-            });
+            })
+            .catch(() => setloading(false));
         }
       });
   };
   useEffect(() => {
     setloading(true);
-    axiosSequre.get(`/borrow?email=${user?.email}`).then((res) => {
-      setborrowedBooks(res.data);
-    });
-    setloading(false);
-  }, [handleReturnBook]);
+
+    axiosSequre
+      .get(`/borrow?email=${user?.email}`)
+      .then((res) => {
+        setloading(false);
+        setborrowedBooks(res.data);
+      })
+      .catch(() => setloading(false));
+  }, []);
 
   return (
     <div>

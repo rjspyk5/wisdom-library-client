@@ -54,13 +54,15 @@ export const Routing = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/book/${params.id}`),
+          fetch(`https://wisdom-library-server.vercel.app/book/${params.id}`),
       },
       {
         path: "/category/:category",
         element: <Category />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.category}`),
+          fetch(
+            `https://wisdom-library-server.vercel.app/category/${params.category}`
+          ),
       },
       {
         path: "/book/:id",

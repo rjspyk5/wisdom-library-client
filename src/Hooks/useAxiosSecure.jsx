@@ -4,7 +4,7 @@ import { auth } from "../firebase.config";
 import { signOut } from "firebase/auth";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://wisdom-library-server.vercel.app",
   withCredentials: true,
 });
 
