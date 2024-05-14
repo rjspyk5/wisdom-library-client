@@ -36,9 +36,9 @@ export const HowToBorrowBook = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 1</p>
               <p className="text-gray-700">
-                All recipes are written using certain conventions, which define
-                the characteristics of common ingredients. The rules vary from
-                place to place.
+                Create an account with us to access our library services. Simply
+                sign up with your email address and create a password to get
+                started.
               </p>
             </div>
           </div>
@@ -75,9 +75,9 @@ export const HowToBorrowBook = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 2</p>
               <p className="text-gray-700">
-                The first mate and his Skipper too will do their very best to
-                make the others comfortable in their tropic island nest. Michael
-                Knight a young loner.
+                Browse our collection and click on a book to view its details.
+                Get a glimpse of the book's summary, author information, and
+                availability.
               </p>
             </div>
           </div>
@@ -114,8 +114,9 @@ export const HowToBorrowBook = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 3</p>
               <p className="text-gray-700">
-                Tell them I hate them. Is the Space Pope reptilian!? Tell her
-                she looks thin. Hello, little man. I will destroy you!
+                Once you've found a book you'd like to borrow, click on the
+                "Borrow" button. Confirm your selection, and the book will be
+                added to your account.
               </p>
             </div>
           </div>
@@ -152,9 +153,9 @@ export const HowToBorrowBook = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 4</p>
               <p className="text-gray-700">
-                If one examines precultural libertarianism, one is faced with a
-                choice: either accept rationalism or conclude that context is a
-                product.
+                Choose a return date for the borrowed book. Select a date that
+                works best for you, ensuring you have enough time to enjoy the
+                book before returning it.
               </p>
             </div>
           </div>

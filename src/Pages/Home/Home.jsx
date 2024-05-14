@@ -6,6 +6,7 @@ import { Catagories } from "./CatagoriesSection/Catagories";
 import { ContactUs } from "../../Components/ContactUs";
 import { StylishCard } from "../../Components/StylishCard";
 import { GridView } from "../AllBooks/GridView";
+import { HowToBorrowBook } from "../../Components/HowToBorrowBook";
 
 export const Home = () => {
   return (
@@ -21,6 +22,13 @@ export const Home = () => {
       </div>
       <div>
         <Catagories />
+      </div>
+      <div>
+        <HeadingSection
+          heading="Easy Steps to Borrowing a Book"
+          subheading="Follow these simple steps to borrow books from our library and dive into your next adventure!"
+        />
+        <HowToBorrowBook />
       </div>
     </>
   );
