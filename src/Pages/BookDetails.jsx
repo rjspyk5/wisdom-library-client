@@ -75,7 +75,7 @@ export const BookDetails = () => {
   }, []);
 
   return (
-    <>
+    <div className="px-8 max-w-[1150px] mx-auto">
       {/* Open the modal using document.getElementById('ID').showModal() method */}
 
       <dialog id="my_modal_1" className="modal sm:modal-middle">
@@ -135,16 +135,20 @@ export const BookDetails = () => {
         </div>
       </dialog>
       {/* Modal end */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-10 py-10">
         <div className="md:col-span-2 p-8 border ">
-          <img className="rounded-lg w-full" src={book?.photo} alt="" />
+          <img
+            className="rounded-lg w-4/5 mx-auto h-[400px]"
+            src={book?.photo}
+            alt=""
+          />
         </div>
         <div className="md:col-span-3">
           <div className="ml-4">
             <h1 className="font-bold text-3xl mb-5">{book?.bookName}</h1>
             <p className="opacity-60 mb-5">by {book?.authorName}</p>
           </div>
-          <table className="table w-2/3 text-lg">
+          <table className="table w-full md:w-2/3 text-lg">
             <tbody>
               <tr>
                 <td className="font-bold">Rating </td>
@@ -183,6 +187,6 @@ export const BookDetails = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
