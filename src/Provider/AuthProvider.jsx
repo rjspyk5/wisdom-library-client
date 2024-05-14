@@ -28,14 +28,16 @@ export const AuthProvider = ({ children }) => {
       if (currentUser) {
         axiosSequre
           .post(`/jwt`, loggedUser)
-          .then((res) => {
-            console.log(res.data);
+          .then(() => {
+            // console.log(res.data);
           })
           .catch((err) => console.log(err));
       } else {
         axiosSequre
           .post(`/logout`, loggedUser)
-          .then((res) => console.log(res.data))
+          .then(() => {
+            // console.log(res.data)
+          })
           .catch((err) => console.log(err));
       }
     });

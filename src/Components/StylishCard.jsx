@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const StylishCard = ({ book, button }) => {
   return (
     <div>
-      <div className="px-1 py-4 bg-base-200  rounded-xl card card-compact ">
+      <div className="px-1 py-4 bg-gradient-to-tr from-base-100 to-base-300 shadow-lg  rounded-xl card card-compact ">
         <figure>
           <img
             className="w-3/5 h-56 md:h-60 rounded-md"
@@ -58,8 +58,8 @@ export const StylishCard = ({ book, button }) => {
           </div>
         </div>
       </div>
-      <div className="w-11/12 h-2 mx-auto bg-base-200  rounded-b-2xl opacity-75" />
-      <div className="w-10/12 h-2 mx-auto bg-base-200  rounded-b-2xl opacity-50" />
+      <div className="w-11/12 h-2 mx-auto bg-base-300  rounded-b-2xl opacity-75" />
+      <div className="w-10/12 h-2 mx-auto bg-base-300  rounded-b-2xl opacity-50" />
     </div>
   );
 };

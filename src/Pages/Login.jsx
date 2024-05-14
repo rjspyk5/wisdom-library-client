@@ -46,7 +46,6 @@ export const Login = () => {
   const handleGoogleLogIn = () => {
     googleLogIn()
       ?.then(() => {
-        console.log("test");
         sweetAlert("Login successfull");
         navigate(state ? state : "/");
       })

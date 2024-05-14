@@ -1,16 +1,12 @@
 import moment from "moment";
 export const BorrowBookCard = ({ info, handleReturnBook }) => {
-  const formatedBorrwDate = moment(info.borrowDate).format(
-    "dddd, MMMM Do YYYY"
-  );
+  const formatedBorrwDate = moment(info.borrowDate).format(" MMMM Do YYYY");
 
-  const formatedReturnDate = moment(info.returnDate).format(
-    "dddd, MMMM Do YYYY"
-  );
+  const formatedReturnDate = moment(info.returnDate).format(" MMMM Do YYYY");
 
   return (
     <div>
-      <div className="card  px-1 py-4 card-compact  bg-base-200 shadow-xl">
+      <div className="card  px-1 py-4 card-compact  bg-base-200 shadow-lg">
         <figure>
           <img
             className="w-3/5 h-56 md:h-60 rounded-lg"
@@ -24,15 +20,15 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
           <table className="table">
             <tbody>
               <tr className="*:py-1">
-                <td className="font-bold">Catergory :</td>
+                <td className="font-bold">Catergory</td>
                 <td>{info.category}</td>
               </tr>
               <tr className="*:py-1">
-                <td className="font-bold">Borrow Date :</td>
+                <td className="font-bold">Borrow Date</td>
                 <td>{formatedBorrwDate}</td>
               </tr>
               <tr className="*:py-1">
-                <td className="font-bold">Return Date :</td>
+                <td className="font-bold">Return Date</td>
                 <td>{formatedReturnDate}</td>
               </tr>
             </tbody>

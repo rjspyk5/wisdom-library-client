@@ -12,9 +12,7 @@ export const Navbar = () => {
   );
 
   const handleLogout = () => {
-    logOut()
-      .then((r) => console.log(r))
-      .catch((er) => console.log(er));
+    logOut();
   };
 
   useEffect(() => {
