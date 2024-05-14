@@ -91,7 +91,7 @@ export const BookDetails = () => {
                   disabled
                   type="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered px-2"
                 />
               </div>
               <div className="form-control">
@@ -102,7 +102,7 @@ export const BookDetails = () => {
                   disabled
                   value={user?.displayName}
                   type="text"
-                  className="input input-bordered"
+                  className="input input-bordered px-2"
                 />
               </div>
             </div>
@@ -118,8 +118,11 @@ export const BookDetails = () => {
               />
             </div>
 
-            <div className="flex gap-4">
-              <button className="btn flex-grow" type="submit">
+            <div className="flex gap-4 mt-3">
+              <button
+                className="btn flex-grow bg-green-500 text-white"
+                type="submit"
+              >
                 Submit
               </button>
             </div>
