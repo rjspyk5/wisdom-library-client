@@ -15,14 +15,14 @@ export const BookDetails = () => {
   const sweetAlert = (msx) => {
     Swal.fire({
       icon: "success",
-      title: msx,
+      text: msx,
     });
   };
   const errorAlert = (msz) =>
     Swal.fire({
       icon: "error",
 
-      title: msz,
+      text: msz,
     });
   const [book, setbook] = useState({});
   const { id } = useParams();
@@ -54,17 +54,18 @@ export const BookDetails = () => {
       .then((res) => {
         fetchData();
         if (res.data === "duplicate request") {
-          return errorAlert(
-            "You already borrowd this book.Duplicate borrw don't allowed"
-          );
+          document.getElementById("my_modal_1").close();
+          return errorAlert("You have already borrowd this book.");
         }
         if (res.data === "limit end") {
+          document.getElementById("my_modal_1").close();
           return errorAlert(
             "Limit Exceeded,each person is allowed to borrow up to three books"
           );
         }
 
-        console.log(res.data);
+        document.getElementById("my_modal_1").close();
+        sweetAlert(`Successfully borrowed ${bookName}`);
       })
       .catch((err) => console.log(err));
   };
@@ -118,7 +119,7 @@ export const BookDetails = () => {
             </div>
 
             <div className="flex gap-4">
-              <button className="w-full btn" type="submit">
+              <button className="btn flex-grow" type="submit">
                 Submit
               </button>
             </div>
