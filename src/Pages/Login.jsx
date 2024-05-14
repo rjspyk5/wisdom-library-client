@@ -1,9 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+
 import { useAuth } from "../Hooks/useAuth";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-import React from "react";
+import img from "../assets/image/stackleft2.jpg";
+
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -56,7 +57,7 @@ export const Login = () => {
     return;
   }
   return (
-    <div className=" mx-3 my-5">
+    <div className="">
       <ToastContainer
         position="top-center"
         autoClose={3000}
@@ -72,19 +73,15 @@ export const Login = () => {
 
       <section className="">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24  sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center px-4 pb-10 pt-10 sm:pb-6  lg:pb-8  sm:px-6 lg:px-8">
             <div className="absolute inset-0">
-              <img
-                className="object-cover object-top w-full h-full"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/signin/4/girl-thinking.jpg"
-                alt=""
-              />
+              <img className=" bg-cover w-full h-full" src={img} alt="" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black to-transparent"></div>
 
             <div className="relative">
               <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
-                <h3 className="text-4xl font-bold text-white">
+                <h3 className="text-xl md:text-2xl font-bold text-white">
                   Welcome back! Log in to your account to access your
                   personalized library experience.
                 </h3>
@@ -170,7 +167,7 @@ export const Login = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center px-4 py-10  sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+          <div className="flex items-center justify-center px-4 py-10  sm:px-6 lg:px-8 ">
             <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
               <h2 className="text-3xl font-bold text-center leading-tight sm:text-4xl">
                 Login now!

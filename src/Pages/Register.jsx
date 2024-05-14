@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import img from "../assets/image/stacked left.jpg";
 
 export const Register = () => {
   const { setuser, loading, user, createUser, updateInfo } = useAuth();
@@ -67,19 +68,15 @@ export const Register = () => {
         <div>
           <section className="">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
+              <div className="relative flex items-center justify-center px-4 pb-10 pt-10 sm:pb-6  lg:pb-8  sm:px-6 lg:px-8">
                 <div className="absolute inset-0">
-                  <img
-                    className="object-cover w-full h-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/4/girl-working-on-laptop.jpg"
-                    alt=""
-                  />
+                  <img className="w-full h-full bg-cover" src={img} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-black to-transparent"></div>
 
                 <div className="relative">
                   <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
-                    <h3 className="text-4xl font-bold text-white">
+                    <h3 className="text-xl md:text-3xl font-bold text-white">
                       Join our library community by creating an account today!
                     </h3>
                     <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-x-8 gap-y-4">
@@ -167,7 +164,10 @@ export const Register = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center px-4 py-10sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+              <div
+                className="flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8
+              "
+              >
                 <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                   <h2 className="text-3xl font-bold leading-tight text-center sm:text-4xl">
                     Register Now
