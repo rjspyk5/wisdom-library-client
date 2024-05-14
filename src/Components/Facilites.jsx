@@ -1,21 +1,20 @@
+import { HeadingSection } from "./HeadingSection";
+import digital from "../assets/image/slider/two.png";
+import digital2 from "../assets/image/slider/four.png";
+import reading from "../assets/image/slider/reading.png";
+
 export const Facilites = () => {
   return (
     <div>
-      <section className="py-10  sm:py-16 lg:py-24">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-              Trusted by world class companies, design teams & popular designers
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 mt-12 lg:mt-24 gap-y-12 md:grid-cols-3 gap-x-6">
-            <div className="md:px-4 lg:px-10">
-              <img
-                className="-rotate-1"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/3/team.jpg"
-                alt=""
-              />
+      <section className="">
+        <HeadingSection
+          heading="Explore Our  Library Facilities"
+          subheading="Discover the range of convenient facilities available at our library to enhance your reading experience"
+        />
+        <div className="">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+            <div className="">
+              <img className="md:h-[280px] md:mx-auto" src={reading} alt="" />
               <h3 className="mt-8 text-xl font-semibold leading-tight ">
                 Quiet Reading Areas
               </h3>
@@ -25,12 +24,8 @@ export const Facilites = () => {
               </p>
             </div>
 
-            <div className="md:px-4 lg:px-10">
-              <img
-                className="rotate-1"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/3/work.jpg"
-                alt=""
-              />
+            <div className="">
+              <img className="md:h-[280px]" src={digital2} alt="" />
               <h3 className="mt-8 text-xl font-semibold leading-tight">
                 24/7 Access to Digital Collections
               </h3>
@@ -40,12 +35,8 @@ export const Facilites = () => {
               </p>
             </div>
 
-            <div className="md:px-4 lg:px-10">
-              <img
-                className="-rotate-1"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/3/success.jpg"
-                alt=""
-              />
+            <div className="">
+              <img className="md:h-[280px] md:mx-auto" src={digital} alt="" />
               <h3 className="mt-8 text-xl font-semibold leading-tight ">
                 Digital Bookshelf Organization:
               </h3>
