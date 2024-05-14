@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const googleLogIn = () => {
     setloading(true);
-    signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
 
   const data = {

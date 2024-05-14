@@ -73,7 +73,7 @@ export const Login = () => {
 
       <section className="">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative flex items-center justify-center px-4 pb-10 pt-10 sm:pb-6  lg:pb-8  sm:px-6 lg:px-8">
+          <div className="relative  flex items-center justify-center px-4 pb-10 pt-10 sm:pb-6  lg:pb-8  sm:px-6 lg:px-8">
             <div className="absolute inset-0">
               <img className=" bg-cover w-full h-full" src={img} alt="" />
             </div>

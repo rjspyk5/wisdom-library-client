@@ -26,7 +26,7 @@ export const Update = () => {
 
     axiosSequre
       .patch(`/book/${bookPrevInfo._id}?email=${user.email}`, data)
-      .then((res) => {
+      .then(() => {
         sweetAlert("Successfully updated");
         navigate("/all");
       })
@@ -44,7 +44,7 @@ export const Update = () => {
               <div className="absolute inset-0 bg-[#00000075]"></div>
               <div className="relative max-w-2xl px-4 mx-auto sm:px-0">
                 <div className="overflow-hidden rounded-md shadow-md">
-                  <div className="card  shadow-2xl bg-base-100">
+                  <div className="card  shadow-3xl bg-[#f0f0f04f] backdrop-blur-lg ">
                     <h1 className="text-center pt-4 font-bold text-2xl">
                       Update Book
                     </h1>

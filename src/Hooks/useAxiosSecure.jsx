@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { auth } from "../firebase.config";
 import { signOut } from "firebase/auth";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
   baseURL: "https://wisdom-library-server.vercel.app",
@@ -24,7 +25,7 @@ export const useAxiosSequre = () => {
       if (error.response.status === 401 || error.response.status === 403) {
         console.log(error);
         logOut().then(() => {
-          window.location.href = "/login";
+          <Navigate to="/login" />;
         });
         return Promise.reject(error);
       }

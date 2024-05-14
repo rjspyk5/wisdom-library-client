@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export const Carasoul = () => {
   return (
@@ -35,7 +36,7 @@ export const Carasoul = () => {
       >
         <SwiperSlide>
           <div
-            className="hero h-[300px] md:h-[500px]"
+            className="hero h-[300px]  md:h-[500px]"
             style={{
               backgroundImage: `url(${y1})`,
             }}
@@ -43,17 +44,22 @@ export const Carasoul = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 md:text-3xl text-2xl lg:text-4xl font-bold">
+                  {" "}
+                  Welcome to Wisdom Library
+                </h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  your digital gateway to endless reading adventures!
                 </p>
-                <button className="btn btn-primary">Get Started</button>
+                <Link
+                  to="/all"
+                  className="btn md:btn-md btn-sm bg-lime-500 text-white"
+                >
+                  Explore Our Library
+                </Link>
               </div>
             </div>
           </div>
-          {/* <img className="w-full h-[300px] md:h-[500px]" src={y1} alt="" /> */}
         </SwiperSlide>
         <SwiperSlide>
           <div
@@ -65,13 +71,19 @@ export const Carasoul = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 md:text-3xl text-2xl lg:text-4xl font-bold">
+                  {" "}
+                  Welcome to Wisdom Library
+                </h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  your digital gateway to endless reading adventures!
                 </p>
-                <button className="btn btn-primary">Get Started</button>
+                <Link
+                  to="/all"
+                  className="btn md:btn-md btn-sm bg-lime-500 text-white"
+                >
+                  Explore Our Library
+                </Link>
               </div>
             </div>
           </div>
@@ -86,13 +98,19 @@ export const Carasoul = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 md:text-3xl text-2xl lg:text-4xl font-bold">
+                  {" "}
+                  Welcome to Wisdom Library
+                </h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  your digital gateway to endless reading adventures!
                 </p>
-                <button className="btn btn-primary">Get Started</button>
+                <Link
+                  to="/all"
+                  className="btn md:btn-md btn-sm bg-lime-500 text-white"
+                >
+                  Explore Our Library
+                </Link>
               </div>
             </div>
           </div>

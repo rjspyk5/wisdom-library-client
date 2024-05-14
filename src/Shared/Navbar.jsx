@@ -25,7 +25,7 @@ export const Navbar = () => {
   }, [darkMode]);
   const menu = (
     <>
-      <li>
+      <li className="font-bold">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -37,7 +37,7 @@ export const Navbar = () => {
         </NavLink>
       </li>
       {user && (
-        <li>
+        <li className="font-bold">
           <NavLink
             to="/add"
             className={({ isActive }) =>
@@ -50,7 +50,7 @@ export const Navbar = () => {
         </li>
       )}
       {user && (
-        <li>
+        <li className="font-bold">
           <NavLink
             to="/all"
             className={({ isActive }) =>
@@ -63,7 +63,7 @@ export const Navbar = () => {
         </li>
       )}
       {user && (
-        <li>
+        <li className="font-bold">
           <NavLink
             to="/borrowed"
             className={({ isActive }) =>
@@ -136,7 +136,7 @@ export const Navbar = () => {
           )}
           <input
             onChange={(e) => {
-              e.target.checked ? setdarkMode("dark") : setdarkMode("light");
+              e.target.checked ? setdarkMode("night") : setdarkMode("light");
             }}
             type="checkbox"
             checked={darkMode === "light" ? false : true}

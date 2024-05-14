@@ -9,7 +9,7 @@ import { Facilites } from "../../Components/Facilites";
 export const Home = () => {
   return (
     <>
-      <div className=" animate__animated animate__fadeIn animate__slower relative">
+      <div className="relative  animate__animated animate__fadeIn animate__slower ">
         <Carasoul />
       </div>
       <div>
