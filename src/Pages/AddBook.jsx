@@ -1,9 +1,8 @@
-import React from "react";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { useAuth } from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/image/stacked right2.jpg";
+import bg from "../assets/image/stackright.jpg";
 
 export const AddBook = () => {
   const axiosSequre = useAxiosSequre();
@@ -62,16 +61,21 @@ export const AddBook = () => {
       <div className="">
         <div className="w-full ">
           <section>
-            <section className="relative py-10 sm:py-16 lg:py-24">
+            <section className="relative py-10 ">
               <div className="absolute inset-0">
                 <img className="object-cover w-full h-full" src={bg} alt="" />
               </div>
               <div className="absolute inset-0 bg-[#00000075]"></div>
-
-              <div className="relative max-w-3xl px-4 mx-auto sm:px-0">
-                <div className="overflow-hidden bg-white rounded-md shadow-md">
+              <div className="relative max-w-2xl px-4 mx-auto sm:px-0">
+                <div className="overflow-hidden rounded-md shadow-md">
                   <div className="card  shadow-2xl bg-base-100">
-                    <form onSubmit={handleSubmit} className="card-body">
+                    <h1 className="text-center pt-4 font-bold text-2xl">
+                      Add Book
+                    </h1>
+                    <form
+                      onSubmit={handleSubmit}
+                      className="card-body py-5 px-14"
+                    >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="form-control">
                           <label className="label">
@@ -81,7 +85,7 @@ export const AddBook = () => {
                             name="name"
                             type="text"
                             placeholder="Book Name"
-                            className="input input-bordered"
+                            className="input min-h-10 h-10 input-bordered"
                             required
                           />
                         </div>
@@ -93,7 +97,7 @@ export const AddBook = () => {
                             name="author"
                             type="text"
                             placeholder="Author Name"
-                            className="input input-bordered"
+                            className="input input-bordered min-h-10 h-10"
                           />
                         </div>
                       </div>
@@ -105,7 +109,7 @@ export const AddBook = () => {
                           name="photo"
                           type="text"
                           placeholder="Image Url"
-                          className="input input-bordered"
+                          className="input input-bordered min-h-10 h-10"
                         />
                       </div>
                       <div className="form-control">
@@ -113,7 +117,7 @@ export const AddBook = () => {
                           <span className="label-text">Short Description</span>
                         </label>
                         <textarea
-                          className="border p-4 rounded-md"
+                          className=" p-4 h-32 input input-bordered "
                           placeholder="Short Description"
                           name="description"
                           id=""
@@ -130,7 +134,7 @@ export const AddBook = () => {
                             name="quantity"
                             type="number"
                             placeholder="Quantity of the book"
-                            className="input input-bordered"
+                            className="input input-bordered min-h-10 h-10"
                             required
                           />
                         </div>
@@ -140,7 +144,7 @@ export const AddBook = () => {
                             <span className="label-text">Catagory</span>
                           </label>
                           <select
-                            className="select select-bordered w-full max-w-xs"
+                            className="select select-bordered w-full max-w-xs min-h-10 h-10"
                             name="catagory"
                             id=""
                           >
@@ -156,7 +160,7 @@ export const AddBook = () => {
                             <span className="label-text">Rating</span>
                           </label>
                           <select
-                            className="select select-bordered w-full max-w-xs"
+                            className="select select-bordered w-full max-w-xs min-h-10 h-10"
                             name="rating"
                             id=""
                           >
@@ -170,15 +174,16 @@ export const AddBook = () => {
                       </div>
 
                       <div className="form-control">
-                        <label className="label">
+                        <label className="label ">
                           <span className="label-text">About the Book</span>
                         </label>
-                        <input
+                        <textarea
+                          className=" p-4 h-28 input input-bordered "
+                          placeholder="About this book"
                           name="about"
-                          type="text"
-                          placeholder="About the book"
-                          className="input input-bordered"
-                        />
+                          id=""
+                          rows="3"
+                        ></textarea>
                       </div>
                       <div className="form-control mt-6">
                         <button
