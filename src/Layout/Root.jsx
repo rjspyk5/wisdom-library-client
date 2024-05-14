@@ -7,7 +7,7 @@ export const Root = () => {
     <div>
       <Navbar />
       <Outlet />
-      <div className="mt-10">
+      <div>
         <Footer />
       </div>
     </div>
