@@ -39,7 +39,7 @@ export const AllBooks = () => {
   };
 
   const cardView = (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-3 gap-4 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 md:gap-8">
       {data.map((el) => (
         <StylishCard key={el._id} book={el} />
       ))}
@@ -72,20 +72,20 @@ export const AllBooks = () => {
     </>
   );
   return (
-    <div className="">
+    <div className="px-8 max-w-[1150px] mx-auto">
       <div className="flex my-10 justify-between">
         <select
           onChange={(e) => setfilter(e.target.value)}
-          className="select min-h-10 h-10 select-bordered w-40"
+          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-32 md:w-40"
         >
-          <option value="all">All Books</option>
-          <option value="available">Available Books</option>
+          <option value="all">All</option>
+          <option value="available">Available</option>
         </select>
 
         <span className="flex bg-base-200 rounded-lg">
           <button
             onClick={() => setview(false)}
-            className={`p-1 px-4 flex items-center rounded-l-lg   ${
+            className={`p-1 px-2 md:px-4 flex items-center rounded-l-lg   ${
               view ? "text-white" : "bg-base-300 "
             }`}
           >
@@ -94,7 +94,7 @@ export const AllBooks = () => {
           </button>
           <button
             onClick={() => setview(true)}
-            className={`p-1  px-4  flex rounded-r-lg  items-center ${
+            className={`p-1 px-2 md:px-4  flex rounded-r-lg  items-center ${
               view ? "bg-base-300 " : "text-white"
             }`}
           >

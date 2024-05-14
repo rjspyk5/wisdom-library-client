@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export const GridView = ({ book }) => {
   return (
     <>
-      <tr className="*:p-1">
+      <tr className="*:p-1 *:py-3">
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
+              <div className=" rounded-md w-10 md:w-14 h-16">
                 <img src={book?.photo} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
@@ -19,7 +19,7 @@ export const GridView = ({ book }) => {
         <td>{book?.bookName}</td>
         <td>{book?.authorName}</td>
         <td>
-          <span className="py-1 px-2 bg-[#62bf623c] text-green-500 rounded-lg">
+          <span className="py-1 px-1 md:px-2 bg-[#62bf623c] text-green-500 rounded-lg">
             {book?.catagory}
           </span>
         </td>
@@ -30,7 +30,7 @@ export const GridView = ({ book }) => {
         <th>
           <Link
             to={`/update/${book?._id}`}
-            className="btn btn-xs bg-[#FF9800] text-white"
+            className="btn btn-xs md:btn-sm lg:btn-md px-1 md:px-2 bg-[#FF9800] text-white"
           >
             Update
           </Link>

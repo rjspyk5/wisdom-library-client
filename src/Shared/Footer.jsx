@@ -7,17 +7,12 @@ export const Footer = () => {
       <div className="  bg-base-300 pt-16 ">
         <div className="grid px-8 max-w-[1150px] mx-auto gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2">
-            <a
-              href="/"
-              aria-label="Go home"
-              title="Company"
-              className="inline-flex items-center"
-            >
+            <Link to="/" className="inline-flex items-center">
               <img className="w-14" src={logo} alt="" />
               <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
                 Wisdom Library
               </span>
-            </a>
+            </Link>
             <div className="mt-6 lg:max-w-sm">
               <p className="text-sm ">
                 At Wisdom Library Management, we're passionate about making
