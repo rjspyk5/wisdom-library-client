@@ -3,7 +3,7 @@ import logo from "../assets/image/icons/logo.png";
 
 export const Footer = () => {
   return (
-    <div className="mt-20">
+    <div>
       <div className="  bg-base-300 pt-16 ">
         <div className="grid px-8 max-w-[1150px] mx-auto gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2">

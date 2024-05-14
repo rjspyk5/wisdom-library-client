@@ -7,7 +7,7 @@ export const StylishCard = ({ book, button }) => {
       <div className="px-1 py-4 bg-base-200  rounded-xl card card-compact ">
         <figure>
           <img
-            className="md:w-3/5 w-4/5 h-52 md:h-60 rounded-md"
+            className="w-3/5 h-56 md:h-60 rounded-md"
             src={book?.photo}
             alt="book Image"
           />
@@ -48,7 +48,10 @@ export const StylishCard = ({ book, button }) => {
                 Update
               </Link>
             ) : (
-              <Link to={`/book/${book?._id}`} className="btn w-full">
+              <Link
+                to={`/book/${book?._id}`}
+                className="btn bg-green-500 text-white w-full"
+              >
                 View Details
               </Link>
             )}
