@@ -3,6 +3,10 @@ import { FcGoogle } from "react-icons/fc";
 import { useAuth } from "../Hooks/useAuth";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export const Login = () => {
   const { state } = useLocation();
@@ -16,6 +20,9 @@ export const Login = () => {
       title: msx,
     });
   };
+
+  const notify = (msz) => toast.error(msz);
+
   useEffect(() => {
     if (user) {
       navigate("/");
@@ -32,7 +39,7 @@ export const Login = () => {
         sweetAlert("Login successfull");
         navigate(state ? state : "/");
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => notify(`${err}`));
   };
 
   const handleGoogleLogIn = () => {
@@ -50,6 +57,18 @@ export const Login = () => {
   }
   return (
     <div className=" mx-3 my-5">
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={true}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="hero   min-h-screen bg-contain bg-no-repeat">
         <div className="flex-col w-full">
           <div className="text-center lg:text-left"></div>
