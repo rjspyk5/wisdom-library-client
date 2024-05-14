@@ -1,4 +1,6 @@
-import Rating from "react-rating";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
 import { BiStar } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
@@ -27,13 +29,17 @@ export const StylishCard = ({ book, button }) => {
               <tr className="*:py-1">
                 <td className="font-bold">Rating :</td>
                 <td>
-                  {" "}
                   <Rating
+                    style={{ maxWidth: 180 }}
+                    value={book?.rating}
+                    readOnly
+                  />
+                  {/* <Rating
                     initialRating={book?.rating}
                     emptySymbol={<BiStar className="text-yellow-400" />}
                     fullSymbol={<BiSolidStar className="text-yellow-400" />}
                     readonly
-                  />
+                  /> */}
                 </td>
               </tr>
             </tbody>

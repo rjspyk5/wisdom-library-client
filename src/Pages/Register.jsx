@@ -1,6 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/useAuth";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 export const Register = () => {
   const { setuser, loading, user, createUser, updateInfo } = useAuth();
@@ -11,6 +14,13 @@ export const Register = () => {
       navigate("/");
     }
   }, []);
+  const notify = (msz) => toast.error(msz);
+  const sweetAlert = (msx) => {
+    Swal.fire({
+      icon: "success",
+      title: msx,
+    });
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -20,17 +30,20 @@ export const Register = () => {
     const pass = form.get("pass");
     const email = e.target.email.value;
     if (!/[A-Z]/.test(pass) || !/[^A-Za-z0-9]/.test(pass) || pass.length < 6) {
-      return alert(
+      return notify(
         "Password must have at least one capital letter,one special char and length at least six character"
       );
     }
     createUser(email, pass)
       .then(() => {
-        updateInfo(name, photo).then(() =>
-          setuser({ ...user, displayName: name, photoURL: photo })
-        );
+        updateInfo(name, photo)
+          .then(() => setuser({ ...user, displayName: name, photoURL: photo }))
+          .then(() => {
+            sweetAlert("Registration Sucessfull");
+            navigate("/");
+          });
       })
-      .catch((er) => console.log(er));
+      .catch((er) => notify(`${er}`));
   };
 
   if (user && loading) {
@@ -38,6 +51,18 @@ export const Register = () => {
   }
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={true}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <section className="bg-white dark:bg-gray-900">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
           <form onSubmit={handleRegister} className="w-full max-w-md">
