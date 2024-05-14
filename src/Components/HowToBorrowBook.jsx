@@ -1,14 +1,15 @@
+import im from "../assets/image/borrow/borrow2.jpg";
 export const HowToBorrowBook = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="">
       <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
-        <div className="lg:py-6 lg:pr-16">
+        <div className="lg:pl-12 order-2 lg:order-1">
           <div className="flex">
             <div className="flex flex-col items-center mr-4">
               <div>
                 <div className="flex items-center justify-center w-10 h-10 border rounded-full">
                   <svg
-                    className="w-4 text-gray-600"
+                    className="w-4 "
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -31,11 +32,11 @@ export const HowToBorrowBook = () => {
                   </svg>
                 </div>
               </div>
-              <div className="w-px h-full bg-gray-300" />
+              <div className="w-px h-full" />
             </div>
-            <div className="pt-1 pb-8">
+            <div className="pt-1 pb-4">
               <p className="mb-2 text-lg font-bold">Step 1</p>
-              <p className="text-gray-700">
+              <p className="">
                 Create an account with us to access our library services. Simply
                 sign up with your email address and create a password to get
                 started.
@@ -47,7 +48,7 @@ export const HowToBorrowBook = () => {
               <div>
                 <div className="flex items-center justify-center w-10 h-10 border rounded-full">
                   <svg
-                    className="w-4 text-gray-600"
+                    className="w-4 "
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -70,11 +71,11 @@ export const HowToBorrowBook = () => {
                   </svg>
                 </div>
               </div>
-              <div className="w-px h-full bg-gray-300" />
+              <div className="w-px h-full " />
             </div>
-            <div className="pt-1 pb-8">
+            <div className="pt-1 pb-4">
               <p className="mb-2 text-lg font-bold">Step 2</p>
-              <p className="text-gray-700">
+              <p className="">
                 Browse our collection and click on a book to view its details.
                 Get a glimpse of the book's summary, author information, and
                 availability.
@@ -86,7 +87,7 @@ export const HowToBorrowBook = () => {
               <div>
                 <div className="flex items-center justify-center w-10 h-10 border rounded-full">
                   <svg
-                    className="w-4 text-gray-600"
+                    className="w-4 "
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -109,11 +110,11 @@ export const HowToBorrowBook = () => {
                   </svg>
                 </div>
               </div>
-              <div className="w-px h-full bg-gray-300" />
+              <div className="w-px h-full" />
             </div>
-            <div className="pt-1 pb-8">
+            <div className="pt-1 pb-4">
               <p className="mb-2 text-lg font-bold">Step 3</p>
-              <p className="text-gray-700">
+              <p className="">
                 Once you've found a book you'd like to borrow, click on the
                 "Borrow" button. Confirm your selection, and the book will be
                 added to your account.
@@ -125,7 +126,7 @@ export const HowToBorrowBook = () => {
               <div>
                 <div className="flex items-center justify-center w-10 h-10 border rounded-full">
                   <svg
-                    className="w-4 text-gray-600"
+                    className="w-4 "
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -148,11 +149,11 @@ export const HowToBorrowBook = () => {
                   </svg>
                 </div>
               </div>
-              <div className="w-px h-full bg-gray-300" />
+              <div className="w-px h-full " />
             </div>
-            <div className="pt-1 pb-8">
+            <div className="pt-1 pb-4">
               <p className="mb-2 text-lg font-bold">Step 4</p>
-              <p className="text-gray-700">
+              <p className="">
                 Choose a return date for the borrowed book. Select a date that
                 works best for you, ensuring you have enough time to enjoy the
                 book before returning it.
@@ -164,7 +165,7 @@ export const HowToBorrowBook = () => {
               <div>
                 <div className="flex items-center justify-center w-10 h-10 border rounded-full">
                   <svg
-                    className="w-6 text-gray-600"
+                    className="w-6 "
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -182,14 +183,15 @@ export const HowToBorrowBook = () => {
             </div>
             <div className="pt-1">
               <p className="mb-2 text-lg font-bold">Success</p>
-              <p className="text-gray-700" />
+              <p className="" />
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative mb-4 lg:mb-0 flex justify-center items-center">
+          <div className="hero-overlay bg-opacity-20 w-full absolute"></div>
           <img
-            className="inset-0 object-cover object-bottom w-full rounded shadow-lg h-96 lg:absolute lg:h-full"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            className=" w-full  rounded-xl shadow-lg h-[300px] md:h-[504px]  "
+            src={im}
             alt=""
           />
         </div>

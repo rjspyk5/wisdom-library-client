@@ -1,12 +1,12 @@
-import React from "react";
 import { Carasoul } from "./Carasoul";
 import "animate.css";
 import { HeadingSection } from "./../../Components/HeadingSection";
 import { Catagories } from "./CatagoriesSection/Catagories";
 import { ContactUs } from "../../Components/ContactUs";
-import { StylishCard } from "../../Components/StylishCard";
-import { GridView } from "../AllBooks/GridView";
 import { HowToBorrowBook } from "../../Components/HowToBorrowBook";
+
+import { Features } from "../../Components/Features";
+import { Facilites } from "../../Components/Facilites";
 
 export const Home = () => {
   return (
@@ -24,12 +24,17 @@ export const Home = () => {
         <Catagories />
       </div>
       <div>
+        <Facilites />
+      </div>
+      <div>
         <HeadingSection
           heading="Easy Steps to Borrowing a Book"
           subheading="Follow these simple steps to borrow books from our library and dive into your next adventure!"
         />
         <HowToBorrowBook />
       </div>
+
+      <ContactUs />
     </>
   );
 };

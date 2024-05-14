@@ -1,200 +1,107 @@
 import React from "react";
+import { HeadingSection } from "./HeadingSection";
+import im from "../assets/image/slider/one.png";
 
 export const ContactUs = () => {
   return (
     <div>
-      <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              Contact us
-            </h2>
-            <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-500">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis.
-            </p>
-          </div>
+      <section className="">
+        <HeadingSection
+          heading="Get in Touch with Us"
+          subheading="Have questions, suggestions, or feedback? Reach out to us anytime! We're here to assist you"
+        />
+        <div className="container mx-auto">
+          <img
+            className="object-cover w-full h-64 mt-10 rounded-lg lg:h-96"
+            src={im}
+            alt=""
+          />
 
-          <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
-            <div className="grid grid-cols-1 gap-6 px-8 text-center md:px-0 md:grid-cols-3">
-              <div className="overflow-hidden bg-white rounded-xl">
-                <div className="p-6">
-                  <svg
-                    className="flex-shrink-0 w-10 h-10 mx-auto text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <p className="mt-6 text-lg font-medium text-gray-900">
-                    +1-316-555-0116
-                  </p>
-                  <p className="mt-1 text-lg font-medium text-gray-900">
-                    +1-446-526-0117
-                  </p>
-                </div>
-              </div>
+          <div className="grid grid-cols-1  gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2 ">
+            <div className="p-4 rounded-lg bg-base-200  md:p-6 shadow-lg flex flex-col justify-center items-center">
+              <span className="inline-block p-3 text-blue-500 rounded-lg ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+              </span>
 
-              <div className="overflow-hidden bg-white rounded-xl">
-                <div className="p-6">
-                  <svg
-                    className="flex-shrink-0 w-10 h-10 mx-auto text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <p className="mt-6 text-lg font-medium text-gray-900">
-                    contact@example.com
-                  </p>
-                  <p className="mt-1 text-lg font-medium text-gray-900">
-                    hr@example.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="overflow-hidden bg-white rounded-xl">
-                <div className="p-6">
-                  <svg
-                    className="flex-shrink-0 w-10 h-10 mx-auto text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <p className="mt-6 text-lg font-medium leading-relaxed text-gray-900">
-                    8502 Preston Rd. Ingle, Maine 98380, USA
-                  </p>
-                </div>
-              </div>
+              <h2 className="mt-4 text-base font-medium ">Chat with us</h2>
+              <p className="mt-2 text-sm ">Speak to our friendly team.</p>
+              <a
+                href="mailto: imrakibul9@gmail.com"
+                className="mt-2 text-sm text-blue-500 dark:text-blue-400"
+              >
+                imrakibul9@gmail.com
+              </a>
             </div>
 
-            <div className="mt-6 overflow-hidden bg-white rounded-xl">
-              <div className="px-6 py-12 sm:p-12">
-                <h3 className="text-3xl font-semibold text-center text-gray-900">
-                  Send us a message
-                </h3>
+            <div className="p-4 rounded-lg bg-base-200 md:p-6 shadow-lg flex flex-col justify-center items-center">
+              <span className="inline-block p-3 text-blue-500 rounded-lg ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+              </span>
 
-                <form action="#" method="POST" className="mt-14">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
-                    <div>
-                      <label className="text-base font-medium text-gray-900">
-                        {" "}
-                        Your name{" "}
-                      </label>
-                      <div className="mt-2.5 relative">
-                        <input
-                          type="text"
-                          name=""
-                          id=""
-                          placeholder="Enter your full name"
-                          className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
-                        />
-                      </div>
-                    </div>
+              <h2 className="mt-4 text-base font-medium ">Visit us</h2>
+              <p className="mt-2 text-sm ">Visit our office HQ..</p>
+              <p className="mt-2 text-sm text-blue-500">
+                187,Shantibag,Malibag
+              </p>
+            </div>
 
-                    <div>
-                      <label className="text-base font-medium text-gray-900">
-                        {" "}
-                        Email address{" "}
-                      </label>
-                      <div className="mt-2.5 relative">
-                        <input
-                          type="email"
-                          name=""
-                          id=""
-                          placeholder="Enter your full name"
-                          className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
-                        />
-                      </div>
-                    </div>
+            <div className="p-4 rounded-lg bg-base-200 md:p-6 flex flex-col justify-center items-center shadow-lg">
+              <span className="inline-block p-3 text-blue-500 rounded-lg ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  />
+                </svg>
+              </span>
 
-                    <div>
-                      <label className="text-base font-medium text-gray-900">
-                        {" "}
-                        Phone number{" "}
-                      </label>
-                      <div className="mt-2.5 relative">
-                        <input
-                          type="tel"
-                          name=""
-                          id=""
-                          placeholder="Enter your full name"
-                          className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="text-base font-medium text-gray-900">
-                        {" "}
-                        Company name{" "}
-                      </label>
-                      <div className="mt-2.5 relative">
-                        <input
-                          type="text"
-                          name=""
-                          id=""
-                          placeholder="Enter your full name"
-                          className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <label className="text-base font-medium text-gray-900">
-                        {" "}
-                        Message{" "}
-                      </label>
-                      <div className="mt-2.5 relative">
-                        <textarea
-                          name=""
-                          id=""
-                          placeholder=""
-                          className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md resize-y focus:outline-none focus:border-blue-600 caret-blue-600"
-                          rows="4"
-                        ></textarea>
-                      </div>
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <button
-                        type="submit"
-                        className="inline-flex items-center justify-center w-full px-4 py-4 mt-2 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
-                      >
-                        Send
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              <h2 className="mt-4 text-base font-medium">Call us</h2>
+              <p className="mt-2 text-sm">Mon-Fri from 8am to 5pm.</p>
+              <a
+                href="tel:+8801684883865"
+                className="mt-2 text-sm text-blue-500 "
+              >
+                +8801684883865
+              </a>
             </div>
           </div>
         </div>
