@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { useAxiosSequre } from "../../Hooks/useAxiosSecure";
 import { useAuth } from "../../Hooks/useAuth";
 import { StylishCard } from "../../Components/StylishCard";
+import { GridView } from "./GridView";
 
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
   const { user } = useAuth();
   const [loading, setloading] = useState(true);
   const [filter, setfilter] = useState("all");
+  const [view, setview] = useState(true);
 
   const axiosSequre = useAxiosSequre();
   useEffect(() => {
@@ -35,6 +37,40 @@ export const AllBooks = () => {
         .catch(() => setloading(false));
   };
 
+  const cardView = (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+      {data.map((el) => (
+        <StylishCard key={el._id} book={el} />
+      ))}
+    </div>
+  );
+  const gridView = (
+    <>
+      <div>
+        <div className="overflow-x-auto">
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr className="*:p-1">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Author Name</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((el) => (
+                <GridView key={el._id} book={el} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <div>
       <div>
@@ -46,18 +82,32 @@ export const AllBooks = () => {
           <option value="available">Available Books</option>
         </select>
       </div>
+      <div className="join">
+        <input
+          onClick={() => setview(false)}
+          className="join-item btn"
+          type="radio"
+          name="options"
+          aria-label="GridView"
+        />
+        <input
+          onClick={() => setview(true)}
+          className="join-item btn"
+          type="radio"
+          name="options"
+          aria-label="Card view"
+        />
+      </div>
       {loading ? (
         <div className="min-h-[500px] flex justify-center items-center">
           <div>
             <span className="loading loading-bars loading-lg"></span>
           </div>
         </div>
+      ) : view ? (
+        cardView
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-          {data.map((el) => (
-            <StylishCard key={el._id} book={el} />
-          ))}
-        </div>
+        gridView
       )}
     </div>
   );

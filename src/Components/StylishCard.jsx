@@ -23,23 +23,21 @@ export const StylishCard = ({ book, button }) => {
           <table className="table">
             <tbody className="space-y-2">
               <tr className="*:py-1">
-                <td className="font-bold">Catergory :</td>
-                <td>{book?.catagory}</td>
+                <td className="font-bold">Catergory</td>
+                <td>
+                  <span className="bg-[#62bf623c] text-green-500 px-2 py-1 rounded-lg">
+                    {book?.catagory}
+                  </span>
+                </td>
               </tr>
               <tr className="*:py-1">
-                <td className="font-bold">Rating :</td>
+                <td className="font-bold">Rating</td>
                 <td>
                   <Rating
                     style={{ maxWidth: 180 }}
                     value={book?.rating}
                     readOnly
                   />
-                  {/* <Rating
-                    initialRating={book?.rating}
-                    emptySymbol={<BiStar className="text-yellow-400" />}
-                    fullSymbol={<BiSolidStar className="text-yellow-400" />}
-                    readonly
-                  /> */}
                 </td>
               </tr>
             </tbody>

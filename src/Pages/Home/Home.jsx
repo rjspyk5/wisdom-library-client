@@ -5,6 +5,7 @@ import { HeadingSection } from "./../../Components/HeadingSection";
 import { Catagories } from "./CatagoriesSection/Catagories";
 import { ContactUs } from "../../Components/ContactUs";
 import { StylishCard } from "../../Components/StylishCard";
+import { GridView } from "../AllBooks/GridView";
 
 export const Home = () => {
   return (
