@@ -85,9 +85,8 @@ export const Login = () => {
             <div className="relative">
               <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
                 <h3 className="text-4xl font-bold text-white">
-                  Join 35k+ web professionals &{" "}
-                  <br className="hidden xl:block" />
-                  build your website
+                  Welcome back! Log in to your account to access your
+                  personalized library experience.
                 </h3>
                 <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-x-8 gap-y-4">
                   <li className="flex items-center space-x-3">
@@ -106,8 +105,7 @@ export const Login = () => {
                       </svg>
                     </div>
                     <span className="text-lg font-medium text-white">
-                      {" "}
-                      Commercial License{" "}
+                      24/7 Access
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -126,8 +124,7 @@ export const Login = () => {
                       </svg>
                     </div>
                     <span className="text-lg font-medium text-white">
-                      {" "}
-                      Unlimited Exports{" "}
+                      Simple Borrowing Process
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -146,8 +143,7 @@ export const Login = () => {
                       </svg>
                     </div>
                     <span className="text-lg font-medium text-white">
-                      {" "}
-                      120+ Coded Blocks{" "}
+                      Instant Returns
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -166,8 +162,7 @@ export const Login = () => {
                       </svg>
                     </div>
                     <span className="text-lg font-medium text-white">
-                      {" "}
-                      Design Files Included{" "}
+                      Browse, Borrow, Enjoy
                     </span>
                   </li>
                 </ul>

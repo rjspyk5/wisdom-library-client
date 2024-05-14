@@ -4,8 +4,6 @@ import { HeadingSection } from "./../../Components/HeadingSection";
 import { Catagories } from "./CatagoriesSection/Catagories";
 import { ContactUs } from "../../Components/ContactUs";
 import { HowToBorrowBook } from "../../Components/HowToBorrowBook";
-
-import { Features } from "../../Components/Features";
 import { Facilites } from "../../Components/Facilites";
 
 export const Home = () => {
