@@ -21,7 +21,7 @@ export const AllBooks = () => {
     }
     if (filter === "available") {
       setloading(true);
-      const updateData = data.filter((el) => parseInt(el.quantity) > 0);
+      const updateData = data.filter((el) => parseInt(el?.quantity) > 0);
       setdata(updateData);
       setloading(false);
     }
@@ -29,14 +29,15 @@ export const AllBooks = () => {
 
   const fetchData = () => {
     setloading(true);
-    user &&
+    if (user?.email) {
       axiosSequre
-        .get(`/books?email=${user.email}`)
+        .get(`/books?email=${user?.email}`)
         .then((res) => {
           setdata(res.data);
           setloading(false);
         })
         .catch(() => setloading(false));
+    }
   };
 
   const cardView = (

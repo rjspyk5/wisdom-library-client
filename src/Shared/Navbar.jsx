@@ -152,7 +152,10 @@ export const Navbar = () => {
               />
             </div>
           ) : (
-            <Link to="/login" className="btn">
+            <Link
+              to="/login"
+              className="btn btn-sm md:btn-md bg-green-500 text-white"
+            >
               Login
             </Link>
           )}

@@ -23,13 +23,14 @@ export const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = { email: userEmail };
-      setuser(currentUser);
-      setloading(false);
+
       if (currentUser) {
         axiosSequre
           .post(`/jwt`, loggedUser)
           .then(() => {
             // console.log(res.data);
+            setuser(currentUser);
+            setloading(false);
           })
           .catch((err) => console.log(err));
       } else {
@@ -37,12 +38,14 @@ export const AuthProvider = ({ children }) => {
           .post(`/logout`, loggedUser)
           .then(() => {
             // console.log(res.data)
+            setuser(null);
+            setloading(false);
           })
           .catch((err) => console.log(err));
       }
     });
     return () => {
-      return unsubscribe();
+      unsubscribe();
     };
   }, []);
 
