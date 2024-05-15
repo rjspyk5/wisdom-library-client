@@ -36,9 +36,11 @@ export const Register = () => {
       );
     }
     createUser(email, pass)
-      .then(() => {
+      .then((res) => {
         updateInfo(name, photo)
-          .then(() => setuser({ ...user, displayName: name, photoURL: photo }))
+          .then(() =>
+            setuser({ ...res.user, displayName: name, photoURL: photo })
+          )
           .then(() => {
             sweetAlert("Registration Sucessfull");
             navigate("/");

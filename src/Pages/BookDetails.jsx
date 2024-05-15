@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
 import moment from "moment";
 import Swal from "sweetalert2";
-
-import { BiStar } from "react-icons/bi";
-import { BiSolidStar } from "react-icons/bi";
 import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { BackButton } from "../Components/BackButton";
