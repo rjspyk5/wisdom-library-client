@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <div>
       <div className="  bg-base-300 pt-16 ">
-        <div className="grid px-8 max-w-[1150px] mx-auto gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid px-3 max-w-[1150px] mx-auto gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2">
             <Link to="/" className="inline-flex items-center">
               <img className="w-14" src={logo} alt="" />

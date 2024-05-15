@@ -68,7 +68,6 @@ export const Navbar = () => {
               isActive ? "bg-blue-600 focus:bg-blue-600" : ""
             }
           >
-            {" "}
             Borrowed Books
           </NavLink>
         </li>
@@ -77,10 +76,14 @@ export const Navbar = () => {
   );
   return (
     <div className="sticky top-0 backdrop-blur-sm bg-[#251c1c36] w-full z-[50]">
-      <div className="navbar bg-transparent">
+      <div className="navbar px-3 max-w-[1150px] mx-auto  bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn px-0 btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -103,7 +106,7 @@ export const Navbar = () => {
               {menu}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
+          <Link to="/" className="btn pl-0 btn-ghost text-xl">
             <img className="w-10" src={logo} alt="" />
             WisdomLibrary
           </Link>

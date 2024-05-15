@@ -138,7 +138,7 @@ export const BookDetails = () => {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10 py-10">
         <div className="md:col-span-2 p-8 border ">
           <img
-            className="rounded-lg w-4/5 mx-auto h-[400px]"
+            className="rounded-lg w-4/5 mx-auto h-[300px]"
             src={book?.photo}
             alt=""
           />
@@ -181,7 +181,7 @@ export const BookDetails = () => {
           <button
             onClick={() => document.getElementById("my_modal_1").showModal()}
             disabled={parseInt(book?.quantity) === 0 ? true : false}
-            className="btn"
+            className="btn bg-lime-500 text-white ml-4"
           >
             Borrow
           </button>

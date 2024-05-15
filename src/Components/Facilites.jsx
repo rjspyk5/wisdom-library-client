@@ -14,8 +14,8 @@ export const Facilites = () => {
         <div className="">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
             <div className="">
-              <img className="md:h-[280px] md:mx-auto" src={reading} alt="" />
-              <h3 className="mt-8 text-xl font-semibold leading-tight ">
+              <img className="md:h-[280px] " src={reading} alt="" />
+              <h3 className=" text-lg md:text-xl font-semibold leading-tight ">
                 Quiet Reading Areas
               </h3>
               <p className="mt-4 text-base ">
@@ -26,7 +26,7 @@ export const Facilites = () => {
 
             <div className="">
               <img className="md:h-[280px]" src={digital2} alt="" />
-              <h3 className="mt-8 text-xl font-semibold leading-tight">
+              <h3 className=" text-lg md:text-xl font-semibold leading-tight">
                 24/7 Access to Digital Collections
               </h3>
               <p className="mt-4 text-base ">
@@ -36,8 +36,8 @@ export const Facilites = () => {
             </div>
 
             <div className="">
-              <img className="md:h-[280px] md:mx-auto" src={digital} alt="" />
-              <h3 className="mt-8 text-xl font-semibold leading-tight ">
+              <img className="md:h-[280px]" src={digital} alt="" />
+              <h3 className=" text-lg md:text-xl font-semibold leading-tight ">
                 Digital Bookshelf Organization:
               </h3>
               <p className="mt-4 text-base ">

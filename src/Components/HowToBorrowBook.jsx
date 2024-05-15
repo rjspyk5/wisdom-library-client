@@ -188,7 +188,7 @@ export const HowToBorrowBook = () => {
           </div>
         </div>
         <div className="relative mb-4 lg:mb-0 flex justify-center items-center">
-          <div className="hero-overlay bg-opacity-20 w-full absolute"></div>
+          <div className="hero-overlay rounded-xl  bg-opacity-20 w-full md:h-[504px] absolute"></div>
           <img
             className=" w-full  rounded-xl shadow-lg h-[300px] md:h-[504px]  "
             src={im}

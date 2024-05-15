@@ -12,27 +12,29 @@ export const Home = () => {
       <div className="relative  animate__animated animate__fadeIn animate__slower ">
         <Carasoul />
       </div>
-      <div>
-        <HeadingSection
-          heading="Catagories"
-          subheading="Browse through our range of categories to find your next literary adventure"
-        />
-      </div>
-      <div>
-        <Catagories />
-      </div>
-      <div>
-        <Facilites />
-      </div>
-      <div>
-        <HeadingSection
-          heading="Easy Steps to Borrowing a Book"
-          subheading="Follow these simple steps to borrow books from our library and dive into your next adventure!"
-        />
-        <HowToBorrowBook />
-      </div>
+      <div className="px-3 max-w-[1150px] mx-auto">
+        <div className="pt-10 pb-20 ">
+          <HeadingSection
+            heading="Catagories"
+            subheading="Browse through our range of categories to find your next literary adventure"
+          />
+          <Catagories />
+        </div>
 
-      <ContactUs />
+        <div>
+          <Facilites />
+        </div>
+        <div className="my-24">
+          <HeadingSection
+            heading="Easy Steps to Borrowing a Book"
+            subheading="Follow these simple steps to borrow books from our library and dive into your next adventure!"
+          />
+          <HowToBorrowBook />
+        </div>
+        <div className="mb-14">
+          <ContactUs />
+        </div>
+      </div>
     </>
   );
 };

@@ -12,7 +12,7 @@ export const CatagoriesCard = ({ info }) => {
         <h1 className="font-bold text-base md:text-xl">{info.category}</h1>
         <Link
           to={`/category/${info.category}`}
-          className="btn btn-sm md:btn-md"
+          className="btn bg-lime-500 text-white mt-2 btn-sm md:btn-md"
         >
           Explore Now
         </Link>
