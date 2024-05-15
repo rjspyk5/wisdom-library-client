@@ -51,7 +51,7 @@ export const Update = () => {
                     <form onSubmit={handleUpdate} className="card-body">
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text">Image</span>
+                          <span className="label-text font-bold">Image</span>
                         </label>
                         <input
                           defaultValue={bookPrevInfo.photo}
@@ -63,7 +63,9 @@ export const Update = () => {
                       </div>
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text">Book Name</span>
+                          <span className="label-text font-bold">
+                            Book Name
+                          </span>
                         </label>
                         <input
                           defaultValue={bookPrevInfo.bookName}
@@ -75,7 +77,9 @@ export const Update = () => {
                       </div>
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text">Author Name</span>
+                          <span className="label-text font-bold">
+                            Author Name
+                          </span>
                         </label>
                         <input
                           defaultValue={bookPrevInfo.authorName}
@@ -88,7 +92,9 @@ export const Update = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Catagory</span>
+                            <span className="label-text font-bold">
+                              Catagory
+                            </span>
                           </label>
                           <select
                             defaultValue={bookPrevInfo.catagory}
@@ -105,7 +111,7 @@ export const Update = () => {
 
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text font-bold">Rating</span>
                           </label>
                           <select
                             defaultValue={bookPrevInfo.rating}

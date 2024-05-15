@@ -68,7 +68,7 @@ export const AddBook = () => {
               <div className="absolute inset-0 bg-[#00000075]"></div>
               <div className="relative max-w-2xl px-4 mx-auto sm:px-0">
                 <div className="overflow-hidden rounded-md shadow-md">
-                  <div className="card  shadow-2xl bg-base-100">
+                  <div className="card  shadow-2xl bg-[#f0f0f04f] backdrop-blur-lg">
                     <h1 className="text-center pt-4 font-bold text-2xl">
                       Add Book
                     </h1>
@@ -79,7 +79,9 @@ export const AddBook = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Book Name</span>
+                            <span className="label-text font-bold">
+                              Book Name
+                            </span>
                           </label>
                           <input
                             name="name"
@@ -91,7 +93,9 @@ export const AddBook = () => {
                         </div>
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Author Name</span>
+                            <span className="label-text font-bold">
+                              Author Name
+                            </span>
                           </label>
                           <input
                             name="author"
@@ -103,7 +107,7 @@ export const AddBook = () => {
                       </div>
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text">Image</span>
+                          <span className="label-text font-bold">Image</span>
                         </label>
                         <input
                           name="photo"
@@ -114,7 +118,9 @@ export const AddBook = () => {
                       </div>
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text">Short Description</span>
+                          <span className="label-text font-bold">
+                            Short Description
+                          </span>
                         </label>
                         <textarea
                           className=" p-4 h-32 input input-bordered "
@@ -128,12 +134,14 @@ export const AddBook = () => {
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Quantity</span>
+                            <span className="label-text font-bold">
+                              Quantity
+                            </span>
                           </label>
                           <input
                             name="quantity"
                             type="number"
-                            placeholder="Quantity of the book"
+                            placeholder="Quantity"
                             className="input input-bordered min-h-10 h-10"
                             required
                           />
@@ -141,7 +149,9 @@ export const AddBook = () => {
 
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Catagory</span>
+                            <span className="label-text font-bold">
+                              Catagory
+                            </span>
                           </label>
                           <select
                             className="select select-bordered w-full max-w-xs min-h-10 h-10"
@@ -157,7 +167,7 @@ export const AddBook = () => {
 
                         <div className="form-control">
                           <label className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text font-bold">Rating</span>
                           </label>
                           <select
                             className="select select-bordered w-full max-w-xs min-h-10 h-10"
@@ -175,7 +185,9 @@ export const AddBook = () => {
 
                       <div className="form-control">
                         <label className="label ">
-                          <span className="label-text">About the Book</span>
+                          <span className="label-text font-bold">
+                            About the Book
+                          </span>
                         </label>
                         <textarea
                           className=" p-4 h-28 input input-bordered "

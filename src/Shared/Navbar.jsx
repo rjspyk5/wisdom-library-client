@@ -27,7 +27,9 @@ export const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+            isActive
+              ? "bg-orange-500 text-white focus:bg-orange-500 focus:text-white"
+              : ""
           }
         >
           {" "}
@@ -39,7 +41,9 @@ export const Navbar = () => {
           <NavLink
             to="/add"
             className={({ isActive }) =>
-              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+              isActive
+                ? "bg-orange-500 text-white focus:bg-orange-500 focus:text-white"
+                : " "
             }
           >
             {" "}
@@ -52,7 +56,9 @@ export const Navbar = () => {
           <NavLink
             to="/all"
             className={({ isActive }) =>
-              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+              isActive
+                ? "bg-orange-500 text-white focus:bg-orange-500 focus:text-white"
+                : ""
             }
           >
             {" "}
@@ -65,7 +71,9 @@ export const Navbar = () => {
           <NavLink
             to="/borrowed"
             className={({ isActive }) =>
-              isActive ? "bg-blue-600 focus:bg-blue-600" : ""
+              isActive
+                ? "bg-orange-500 text-white focus:bg-orange-500 focus:text-white"
+                : ""
             }
           >
             Borrowed Books
