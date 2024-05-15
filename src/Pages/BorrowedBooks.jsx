@@ -31,22 +31,21 @@ export const BorrowedBooks = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
+          setloading(true);
           axiosSequre
             .delete(`/borrow/${borrowBookId}?book=${bookId}`)
             .then(() => {
-              setloading(true);
               axiosSequre
                 .get(`/borrow?email=${user?.email}`)
                 .then((res) => {
-                  setloading(false);
                   setborrowedBooks(res.data);
+                  setloading(false);
+                  swalWithBootstrapButtons.fire({
+                    title: "Successfully Return ",
+                    icon: "success",
+                  });
                 })
                 .catch(() => setloading(false));
-
-              swalWithBootstrapButtons.fire({
-                title: "Successfully Return ",
-                icon: "success",
-              });
             })
             .catch(() => setloading(false));
         }
