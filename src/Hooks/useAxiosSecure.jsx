@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { auth } from "../firebase.config";
 import { signOut } from "firebase/auth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
   baseURL: "https://wisdom-library-server.vercel.app",

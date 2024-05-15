@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";

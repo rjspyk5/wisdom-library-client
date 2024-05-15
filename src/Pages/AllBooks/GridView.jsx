@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export const GridView = ({ book }) => {
   return (
@@ -37,4 +38,7 @@ export const GridView = ({ book }) => {
       </tr>
     </>
   );
+};
+GridView.propTypes = {
+  book: PropTypes.object,
 };

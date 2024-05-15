@@ -1,4 +1,5 @@
 import moment from "moment";
+import PropTypes from "prop-types";
 export const BorrowBookCard = ({ info, handleReturnBook }) => {
   const formatedBorrwDate = moment(info.borrowDate).format(" MMMM Do YYYY");
 
@@ -43,4 +44,9 @@ export const BorrowBookCard = ({ info, handleReturnBook }) => {
       </div>
     </div>
   );
+};
+
+BorrowBookCard.propTypes = {
+  info: PropTypes.object,
+  handleReturnBook: PropTypes.func,
 };

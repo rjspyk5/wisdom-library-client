@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 export const HeadingSection = ({ heading, subheading }) => {
   return (
@@ -7,4 +7,9 @@ export const HeadingSection = ({ heading, subheading }) => {
       <h2 className="text-center max-w-xl mx-auto">{subheading}</h2>
     </div>
   );
+};
+
+HeadingSection.propTypes = {
+  heading: PropTypes.string,
+  subheading: PropTypes.string,
 };

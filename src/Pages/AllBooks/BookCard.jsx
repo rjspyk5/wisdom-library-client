@@ -1,8 +1,8 @@
-import React from "react";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import { BiStar } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
+import PropTypes from "prop-types";
 
 export const BookCard = ({ book, button }) => {
   return (
@@ -56,4 +56,8 @@ export const BookCard = ({ book, button }) => {
       </div>
     </div>
   );
+};
+BookCard.propTypes = {
+  book: PropTypes.object,
+  button: PropTypes.bool,
 };

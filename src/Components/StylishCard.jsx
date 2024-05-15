@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import PropTypes from "prop-types";
 export const StylishCard = ({ book, button }) => {
   return (
     <div>
@@ -67,4 +68,9 @@ export const StylishCard = ({ book, button }) => {
       </Fade>
     </div>
   );
+};
+
+StylishCard.propTypes = {
+  book: PropTypes.object,
+  button: PropTypes.bool,
 };

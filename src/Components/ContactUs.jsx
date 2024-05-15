@@ -1,4 +1,3 @@
-import React from "react";
 import { HeadingSection } from "./HeadingSection";
 import im from "../assets/image/slider/one.png";
 
