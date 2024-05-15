@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { PiGridFourFill } from "react-icons/pi";
+
 import { useAxiosSequre } from "../../Hooks/useAxiosSecure";
 import { useAuth } from "../../Hooks/useAuth";
 import { StylishCard } from "../../Components/StylishCard";
 import { GridView } from "./GridView";
-import { PiListBulletsFill } from "react-icons/pi";
+
 import { HeadingSection } from "../../Components/HeadingSection";
 
 export const AllBooks = () => {
@@ -12,7 +12,7 @@ export const AllBooks = () => {
   const { user } = useAuth();
   const [loading, setloading] = useState(true);
   const [filter, setfilter] = useState("all");
-  const [view, setview] = useState(true);
+  const [view, setview] = useState("card");
 
   const axiosSequre = useAxiosSequre();
   useEffect(() => {
@@ -38,7 +38,7 @@ export const AllBooks = () => {
         })
         .catch(() => setloading(false));
   };
-  console.log(view);
+
   const cardView = (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 mb-14 md:gap-8">
       {data.map((el) => (
@@ -78,7 +78,7 @@ export const AllBooks = () => {
         heading="All books"
         subheading="Explore our shelves for your next great read. With genres to suit every taste, finding your next favorite book is just a click away!"
       />
-      <div className="flex my-10 mx-4 justify-between">
+      <div className="flex my-10  justify-between">
         <select
           onChange={(e) => setfilter(e.target.value)}
           className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-32 md:w-40"
@@ -87,34 +87,13 @@ export const AllBooks = () => {
           <option value="available">Available</option>
         </select>
 
-        {/* <select
+        <select
           onChange={(e) => setview(e.target.value)}
-          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-32 md:w-40"
+          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-30 md:w-40"
         >
-          <option value={true}>Card View</option>
-          <option value={false}>Table View</option>
-        </select> */}
-
-        <span className="flex bg-base-200 rounded-lg">
-          <button
-            onClick={() => setview(false)}
-            className={`p-1 px-2 md:px-4 flex items-center rounded-l-lg   ${
-              view ? "text-white" : "bg-base-300 "
-            }`}
-          >
-            List
-            <PiListBulletsFill />
-          </button>
-          <button
-            onClick={() => setview(true)}
-            className={`p-1 px-2 md:px-4  flex rounded-r-lg  items-center ${
-              view ? "bg-base-300 " : "text-white"
-            }`}
-          >
-            Grid
-            <PiGridFourFill />
-          </button>
-        </span>
+          <option value={"card"}>CardView</option>
+          <option value={"table"}>TableView</option>
+        </select>
       </div>
 
       {loading ? (
@@ -123,7 +102,7 @@ export const AllBooks = () => {
             <span className="loading loading-bars loading-lg"></span>
           </div>
         </div>
-      ) : view ? (
+      ) : view == "card" ? (
         cardView
       ) : (
         gridView
