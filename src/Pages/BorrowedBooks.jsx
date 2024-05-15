@@ -4,6 +4,7 @@ import { useAuth } from "../Hooks/useAuth";
 import { useAxiosSequre } from "../Hooks/useAxiosSecure";
 import { BorrowBookCard } from "../Components/BorrowBookCard";
 import { HeadingSection } from "../Components/HeadingSection";
+import { BackButton } from "../Components/BackButton";
 
 export const BorrowedBooks = () => {
   const axiosSequre = useAxiosSequre();
@@ -88,6 +89,7 @@ export const BorrowedBooks = () => {
         heading="Your Borrowed Books"
         subheading="Explore the Books You've Borrowed from Wisdom Library"
       />
+      <BackButton />
       {loading ? (
         <div className="min-h-[500px] flex justify-center items-center">
           <div>

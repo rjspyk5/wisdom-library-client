@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { HeadingSection } from "../../../Components/HeadingSection";
 
 import { StylishCard } from "../../../Components/StylishCard";
+import { BackButton } from "../../../Components/BackButton";
 
 export const Category = () => {
   const { category } = useParams();
@@ -13,6 +14,7 @@ export const Category = () => {
         heading={`All ${category} books`}
         subheading={`Explore a diverse range of ${category} books, from timeless classics to contemporary bestsellers.`}
       />
+      <BackButton />
 
       <div className="gap-4 md:gap-8 grid grid-cols-1 md:grid-cols-2 mb-14 lg:grid-cols-3">
         {books?.map((el) => (
