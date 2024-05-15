@@ -1,8 +1,13 @@
-# React + Vite
+# Wisdom Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Wisdom Library, your digital gateway to endless reading adventures!
 
-Currently, two official plugins are available:
+Live Link : https://wisdom-library-1acce.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **User Login**: Registered users can log in to access their personalized library experience.
+- **Add Books**: Users can add new books to the library collection.
+- **Update Books**: Users have the ability to update book information.
+- **Borrow Books**: Easily borrow books and track borrowing history.
+- **Night Mode**: Enjoy a comfortable reading experience with our night mode feature.
