@@ -31,7 +31,7 @@ export const Home = () => {
           />
           <HowToBorrowBook />
         </div>
-        <div className="mb-14">
+        <div className="mb-20">
           <ContactUs />
         </div>
       </div>

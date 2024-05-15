@@ -106,8 +106,11 @@ export const Navbar = () => {
               {menu}
             </ul>
           </div>
-          <Link to="/" className="btn pl-0 btn-ghost text-xl">
-            <img className="w-10" src={logo} alt="" />
+          <Link
+            to="/"
+            className="btn px-0 btn-ghost text-sm font-bold md:text-xl"
+          >
+            <img className="w-10 hidden md:block" src={logo} alt="" />
             WisdomLibrary
           </Link>
         </div>
@@ -116,33 +119,35 @@ export const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="flex items-center gap-2 md:gap-4">
-              <h1>{user?.displayName}</h1>
+            <div className="flex items-center gap-1 md:gap-2">
+              <h1 className="text-[10px] md:text-sm">{user?.displayName}</h1>
               <div className="avatar">
-                <div className="w-8 md:w-11 rounded-full">
+                <div className="w-7 md:w-9  rounded-full">
                   <img src={user.photoURL} />
                 </div>
               </div>
               <button
                 onClick={handleLogout}
-                className="btn text-white font-bold md:btn-md btn-sm bg-red-500"
+                className="btn text-white font-bold  btn-sm px-[2px] md:px-3 bg-red-500"
               >
                 Logout
               </button>
+              <input
+                onChange={(e) => {
+                  e.target.checked
+                    ? setdarkMode("night")
+                    : setdarkMode("light");
+                }}
+                type="checkbox"
+                checked={darkMode === "light" ? false : true}
+                className="toggle theme-controller "
+              />
             </div>
           ) : (
             <Link to="/login" className="btn">
               Login
             </Link>
           )}
-          <input
-            onChange={(e) => {
-              e.target.checked ? setdarkMode("night") : setdarkMode("light");
-            }}
-            type="checkbox"
-            checked={darkMode === "light" ? false : true}
-            className="toggle theme-controller"
-          />
         </div>
       </div>
     </div>
