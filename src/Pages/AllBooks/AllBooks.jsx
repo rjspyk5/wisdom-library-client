@@ -40,7 +40,7 @@ export const AllBooks = () => {
   };
 
   const cardView = (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 mb-14 md:gap-8">
       {data.map((el) => (
         <StylishCard key={el._id} book={el} />
       ))}
@@ -48,7 +48,7 @@ export const AllBooks = () => {
   );
   const gridView = (
     <>
-      <div className="my-3">
+      <div className="my-14">
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
