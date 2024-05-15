@@ -134,7 +134,7 @@ export const BookDetails = () => {
       {/* Modal end */}
       <BackButton />
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10 my-8 py-10">
-        <div className="md:col-span-2 p-8 border ">
+        <div className="md:col-span-2 p-8 border flex items-center justify-center">
           <img
             className="rounded-lg w-4/5 mx-auto h-[300px]"
             src={book?.photo}
@@ -163,23 +163,27 @@ export const BookDetails = () => {
                 <td>{book?.catagory}</td>
               </tr>
               <tr>
-                <td className="font-bold">Available Quantity </td>
+                <td className="font-bold">Quantity </td>
                 <td>{book?.quantity}</td>
-              </tr>
-              <tr>
-                <td className="font-bold">About this book </td>
-                <td>{book?.about}</td>
-              </tr>
-              <tr>
-                <td className="font-bold">Description </td>
-                <td>{book?.description}</td>
               </tr>
             </tbody>
           </table>
+          <div className="space-y-2">
+            <p className="pl-4">
+              {" "}
+              <span className="font-bold">Description :</span>{" "}
+              <span className="pl-5">{book?.description}</span>
+            </p>
+            <p className="pl-4">
+              {" "}
+              <span className="font-bold">About this book :</span>{" "}
+              <span className="pl-1">{book?.description}</span>
+            </p>
+          </div>
           <button
             onClick={() => document.getElementById("my_modal_1").showModal()}
             disabled={parseInt(book?.quantity) === 0 ? true : false}
-            className="btn bg-lime-500 text-white ml-4"
+            className="btn mt-4 bg-lime-500 text-white ml-4"
           >
             Borrow
           </button>
