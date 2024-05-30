@@ -5,6 +5,7 @@ import { StylishCard } from "../../Components/StylishCard";
 import { GridView } from "./GridView";
 import { HeadingSection } from "../../Components/HeadingSection";
 import { SearchBook } from "../../Components/SearchBook";
+import { useAxiosPublic } from "../../Hooks/useAxiosPublic";
 
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
@@ -14,10 +15,14 @@ export const AllBooks = () => {
   const [view, setview] = useState("card");
 
   const axiosSequre = useAxiosSequre();
+  const axiosPublic = useAxiosPublic();
 
-  const handleSearch = (e, value) => {
+  const handleSearch = async (e, value) => {
     e.preventDefault();
-    console.log(value);
+    setloading(true);
+    const result = await axiosPublic.get(`/search/books?text=${value}`);
+    setdata(result.data);
+    setloading(false);
   };
 
   useEffect(() => {
@@ -44,40 +49,51 @@ export const AllBooks = () => {
         .catch(() => setloading(false));
     }
   };
+  const notAvailable = (
+    <div className="mt-5 min-h-[300px] flex justify-center items-center">
+      <h1>No books found</h1>
+    </div>
+  );
 
   const cardView = (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 mb-14 md:gap-8">
-      {data.map((el) => (
-        <StylishCard key={el._id} book={el} />
-      ))}
+      {data.length < 1
+        ? notAvailable
+        : data.map((el) => <StylishCard key={el._id} book={el} />)}
     </div>
   );
+
   const gridView = (
     <>
       <div className="my-14">
         <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr className="*:p-1">
-                <th>Image</th>
-                <th>Name</th>
-                <th>Author Name</th>
-                <th>Category</th>
-                <th>Rating</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((el) => (
-                <GridView key={el._id} book={el} />
-              ))}
-            </tbody>
-          </table>
+          {data.length < 1 ? (
+            notAvailable
+          ) : (
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr className="*:p-1">
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Author Name</th>
+                  <th>Category</th>
+                  <th>Rating</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((el) => (
+                  <GridView key={el._id} book={el} />
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </>
   );
+
   return (
     <div className="px-8 max-w-[1150px] mx-auto">
       <HeadingSection
