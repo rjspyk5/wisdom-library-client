@@ -17,12 +17,14 @@ export const AllBooks = () => {
   const axiosSequre = useAxiosSequre();
   const axiosPublic = useAxiosPublic();
 
-  const handleSearch = async (e, value) => {
+  const handleSearch = async (e, value, clearField) => {
     e.preventDefault();
     setloading(true);
     const result = await axiosPublic.get(`/search/books?text=${value}`);
     setdata(result.data);
+
     setloading(false);
+    clearField("");
   };
 
   useEffect(() => {
@@ -50,16 +52,16 @@ export const AllBooks = () => {
     }
   };
   const notAvailable = (
-    <div className="mt-5 min-h-[300px] flex justify-center items-center">
-      <h1>No books found</h1>
+    <div className="my-5 min-h-[100px] flex justify-center items-center">
+      <h1 className="text-2xl font-bold">No books found</h1>
     </div>
   );
 
   const cardView = (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-3 gap-4 mb-14 md:gap-8">
-      {data.length < 1
-        ? notAvailable
-        : data.map((el) => <StylishCard key={el._id} book={el} />)}
+      {data.map((el) => (
+        <StylishCard key={el._id} book={el} />
+      ))}
     </div>
   );
 
@@ -67,28 +69,24 @@ export const AllBooks = () => {
     <>
       <div className="my-14">
         <div className="overflow-x-auto">
-          {data.length < 1 ? (
-            notAvailable
-          ) : (
-            <table className="table">
-              {/* head */}
-              <thead>
-                <tr className="*:p-1">
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th>Author Name</th>
-                  <th>Category</th>
-                  <th>Rating</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((el) => (
-                  <GridView key={el._id} book={el} />
-                ))}
-              </tbody>
-            </table>
-          )}
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr className="*:p-1">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Author Name</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((el) => (
+                <GridView key={el._id} book={el} />
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>
@@ -108,9 +106,7 @@ export const AllBooks = () => {
           <option value="all">All</option>
           <option value="available">Available</option>
         </select>
-
         <SearchBook handleSearch={handleSearch} />
-
         <select
           onChange={(e) => setview(e.target.value)}
           className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered max-w-30 md:max-w-40"
@@ -126,6 +122,8 @@ export const AllBooks = () => {
             <span className="loading loading-bars loading-lg"></span>
           </div>
         </div>
+      ) : data.length < 1 ? (
+        notAvailable
       ) : view == "card" ? (
         cardView
       ) : (
