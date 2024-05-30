@@ -54,7 +54,7 @@ export const Carasoul = () => {
                   to="/all"
                   className="btn md:btn-md btn-sm bg-orange-500 text-white"
                 >
-                  Explore Our Library
+                  Search Book
                 </Link>
               </div>
             </div>
@@ -81,7 +81,7 @@ export const Carasoul = () => {
                   to="/all"
                   className="btn md:btn-md btn-sm bg-orange-500 text-white"
                 >
-                  Explore Our Library
+                  Search Book
                 </Link>
               </div>
             </div>
@@ -108,7 +108,7 @@ export const Carasoul = () => {
                   to="/all"
                   className="btn md:btn-md btn-sm bg-orange-500 text-white"
                 >
-                  Explore Our Library
+                  Search Book
                 </Link>
               </div>
             </div>

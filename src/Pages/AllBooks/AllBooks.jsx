@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-
 import { useAxiosSequre } from "../../Hooks/useAxiosSecure";
 import { useAuth } from "../../Hooks/useAuth";
 import { StylishCard } from "../../Components/StylishCard";
 import { GridView } from "./GridView";
-
 import { HeadingSection } from "../../Components/HeadingSection";
+import { SearchBook } from "../../Components/SearchBook";
 
 export const AllBooks = () => {
   const [data, setdata] = useState([]);
@@ -15,6 +14,12 @@ export const AllBooks = () => {
   const [view, setview] = useState("card");
 
   const axiosSequre = useAxiosSequre();
+
+  const handleSearch = (e, value) => {
+    e.preventDefault();
+    console.log(value);
+  };
+
   useEffect(() => {
     if (filter === "all") {
       fetchData();
@@ -79,18 +84,20 @@ export const AllBooks = () => {
         heading="All books"
         subheading="Explore our shelves for your next great read. With genres to suit every taste, finding your next favorite book is just a click away!"
       />
-      <div className="flex my-10  justify-between">
+      <div className="flex flex-col md:flex-row my-10 gap-2 justify-between">
         <select
           onChange={(e) => setfilter(e.target.value)}
-          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-32 md:w-40"
+          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered max-w-30 md:max-w-40"
         >
           <option value="all">All</option>
           <option value="available">Available</option>
         </select>
 
+        <SearchBook handleSearch={handleSearch} />
+
         <select
           onChange={(e) => setview(e.target.value)}
-          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered w-30 md:w-40"
+          className="select md:min-h-10 min-h-8 md:h-10 h-8 select-bordered max-w-30 md:max-w-40"
         >
           <option value={"card"}>CardView</option>
           <option value={"table"}>TableView</option>
