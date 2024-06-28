@@ -22,7 +22,6 @@ export const AllBooks = () => {
     setloading(true);
     const result = await axiosPublic.get(`/search/books?text=${value}`);
     setdata(result.data);
-
     setloading(false);
     clearField("");
   };

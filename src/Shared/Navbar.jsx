@@ -154,7 +154,7 @@ export const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="btn btn-sm md:btn-md bg-green-500 text-white"
+              className="rounded-md px-3 md:py-2 py-1 bg-green-500 text-white"
             >
               Login
             </Link>
