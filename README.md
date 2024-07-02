@@ -40,7 +40,7 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/parcel-go.git
+   git clone https://github.com/rjspyk5/wisdom-library-client.git
    cd parcel-go
 
 2. **Install dependencies::**
