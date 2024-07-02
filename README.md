@@ -2,7 +2,7 @@
 
 Welcome to Wisdom Library, your digital gateway to endless reading adventures!
 
-Assignment_category_0008
+
 Live Link : https://wisdom-library-1acce.web.app/
 
 ## Features
