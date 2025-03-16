@@ -7,7 +7,7 @@
 - Users can add, update, and borrow books seamlessly.
 - Enjoy a comfortable reading experience with the night mode feature.
 
-## Live Site URL
+## Live URL
 
 - [Wisdom Library Live](https://wisdom-library-1acce.web.app/)
 
