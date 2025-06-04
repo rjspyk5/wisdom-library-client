@@ -13,7 +13,7 @@
 
 ## Key Features
 
-- User Login: Access your personalized library experience.
+- User Login: Sequre authenticarion system.
 - Add Books: Expand the library collection with new titles.
 - Update Books: Keep book information current and accurate.
 - Borrow Books: Easily borrow and return books as needed.
@@ -21,7 +21,7 @@
 
 ## Technology Stack
 
-- **Frontend:** React.js, Tailwind CSS
+- **Frontend:** React.js, Tailwind CSS,Context ApI
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JWT, Firebase
@@ -41,7 +41,7 @@
 
    ```bash
    git clone https://github.com/rjspyk5/wisdom-library-client.git
-   cd parcel-go
+   cd wisdom-librart-client
 
 2. **Install dependencies::**
 
